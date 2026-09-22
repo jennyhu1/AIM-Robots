@@ -35,6 +35,8 @@ test("server-renders the AIMRO homepage", async () => {
   assert.match(html, /Jeff Cui/);
   assert.match(html, /Robotics AI Engineering Intern/);
   assert.match(html, /jenny\.hu@aimrobots\.ai/);
+  assert.match(html, /580 Herndon Pkwy/);
+  assert.match(html, /Herndon, VA 20170/);
   assert.match(html, /\/images\/aimex-hero\.jpg/);
   assert.match(html, /\/careers\/robotics-ai-engineering-intern/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);

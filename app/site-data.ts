@@ -4,6 +4,12 @@ export const SITE = {
   productName: "AIMEX",
   email: "jenny.hu@aimrobots.ai",
   location: "Herndon, Virginia",
+  address: {
+    street: "580 Herndon Pkwy",
+    suite: "Ste 700",
+    cityRegionPostal: "Herndon, VA 20170",
+    country: "United States",
+  },
   linkedIn: "https://www.linkedin.com/in/jeff-cui-928266233/",
 } as const;
 

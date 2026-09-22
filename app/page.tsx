@@ -226,7 +226,12 @@ export default function Home() {
             </div>
             <div className="contact-details">
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-              <p>{SITE.location}</p>
+              <address>
+                <span>{SITE.address.street}</span>
+                <span>{SITE.address.suite}</span>
+                <span>{SITE.address.cityRegionPostal}</span>
+                <span>{SITE.address.country}</span>
+              </address>
             </div>
           </div>
         </section>

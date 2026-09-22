@@ -570,9 +570,15 @@ h3 {
   text-underline-offset: 6px;
 }
 
-.contact-details p {
+.contact-details address {
   margin: 16px 0 0;
   color: var(--muted);
+  font-style: normal;
+  line-height: 1.65;
+}
+
+.contact-details address span {
+  display: block;
 }
 
 .site-footer {

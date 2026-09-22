@@ -52,7 +52,7 @@ Edit [`app/site-data.ts`](app/site-data.ts) to change:
 - brand and legal company names
 - product name
 - contact email
-- Herndon location
+- Herndon location and full street address
 - Jeff Cui's LinkedIn URL
 - role title, logistics, URL, and open/closed status
 
