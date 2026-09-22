@@ -439,6 +439,104 @@ h3 {
   line-height: 1.65;
 }
 
+.aimex-workflow {
+  grid-column: 2;
+  margin-top: clamp(64px, 9vw, 110px);
+  padding-top: clamp(46px, 6vw, 68px);
+  border-top: 1px solid #cbc6c2;
+  scroll-margin-top: calc(var(--header-height) + 16px);
+}
+
+.workflow-intro {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(300px, 0.9fr);
+  gap: clamp(40px, 8vw, 110px);
+  align-items: end;
+}
+
+.workflow-intro h3 {
+  font-size: clamp(1.65rem, 2.7vw, 2.5rem);
+  letter-spacing: -0.035em;
+}
+
+.workflow-intro > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.workflow-steps {
+  margin: clamp(38px, 6vw, 58px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid #bdb8b4;
+  border-bottom: 1px solid #cbc6c2;
+  list-style: none;
+}
+
+.workflow-step {
+  min-width: 0;
+  padding: 25px clamp(20px, 3vw, 34px) 27px;
+}
+
+.workflow-step:first-child {
+  padding-left: 0;
+}
+
+.workflow-step + .workflow-step {
+  border-left: 1px solid #cbc6c2;
+}
+
+.workflow-step > span {
+  color: var(--brand);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.workflow-step h4 {
+  margin: 15px 0 0;
+  color: #303135;
+  font-size: 1.05rem;
+  font-weight: 760;
+  line-height: 1.35;
+}
+
+.workflow-step p {
+  margin: 8px 0 0;
+  color: #626367;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.workflow-media {
+  margin-top: clamp(36px, 5vw, 54px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(18px, 3vw, 34px);
+  align-items: start;
+}
+
+.workflow-media figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.workflow-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--white);
+}
+
+.workflow-media figcaption {
+  margin-top: 10px;
+  color: #797a7d;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
 .product-system {
   grid-column: 2;
   margin-top: clamp(64px, 9vw, 110px);
@@ -977,6 +1075,7 @@ h3 {
   .technology-layout,
   .position,
   .manufacturing-context,
+  .aimex-workflow,
   .product-system {
     grid-column: 2;
   }
@@ -985,6 +1084,7 @@ h3 {
   .technology-intro,
   .careers-intro,
   .manufacturing-context,
+  .workflow-intro,
   .product-system-intro {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -1076,6 +1176,7 @@ h3 {
   .technology-layout,
   .position,
   .manufacturing-context,
+  .aimex-workflow,
   .product-system {
     grid-column: 1;
   }
@@ -1095,9 +1196,29 @@ h3 {
   }
 
   .manufacturing-context,
+  .workflow-intro,
   .product-system-intro {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+
+  .workflow-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-step,
+  .workflow-step:first-child {
+    padding: 22px 0 24px;
+  }
+
+  .workflow-step + .workflow-step {
+    border-top: 1px solid #cbc6c2;
+    border-left: 0;
+  }
+
+  .workflow-media {
+    grid-template-columns: 1fr;
+    gap: 34px;
   }
 
   .system-visual {

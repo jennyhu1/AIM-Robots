@@ -122,12 +122,22 @@ system. Market-size figures, cost and deployment claims, customer or partnership
 claims, broad hardware catalogs, go-to-market material, and placeholder sections
 from the prototype were intentionally excluded.
 
+Two visuals from that repository add manufacturing context: an industrial robot
+workcell photograph and a machine-vision visualization. Their untouched source
+files remain available in the legacy repository and are also preserved locally
+under the ignored `source-assets/legacy-web/` folder; compressed copies in
+`public/images/` are served by the site. The workcell photograph contains
+recognizable people in the background, so its publication clearance should be
+confirmed before the final domain launch.
+
 ## Pre-launch confirmation checklist
 
 - [ ] Confirm the public relationship between the display brand `AIMRO` and legal company name `AIM Robots, Inc.`.
 - [ ] Confirm the current product naming hierarchy. The current project presents `AIMEX` as the core platform; the legacy site describes `AIM AI Operating System (AIOS)` as the umbrella architecture and expands `AIMEX` as `AIM Executor`.
 - [ ] Confirm whether `AIM Tower` is an active product name, a planned product, or an internal concept, and approve the public description of its line-level coordination role.
 - [ ] Confirm that material handling and vision-based inspection should remain public target applications rather than current delivered capabilities.
+- [ ] Confirm that AIMRO has permission to publish the two images carried over from the legacy repository.
+- [ ] Confirm that the visible people in the background of the industrial workcell photograph are acceptable for public use.
 - [ ] Confirm the founder's full name is `Jeff Cui` and the public title should be `Founder & CEO`. The supplied deck also says `Founder, CEO & CPO`.
 - [ ] Confirm the public wording of Jeff Cui's manufacturing, factory reshoring, and BS/MS background at Tsinghua University and the University of Maryland.
 - [ ] Confirm the supplied founder portrait is current and cleared for website use.

@@ -42,3 +42,4 @@ yarn-error.log*
 # local source materials (web-ready copies live under public/)
 /AIM_Robots_Cold_Email_Deck_v1_11.pptx
 /AIMRO_Robotics_AI_Intern_JD.pdf
+/source-assets/legacy-web/

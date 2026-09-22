@@ -31,6 +31,10 @@ test("server-renders the AIMRO homepage", async () => {
   const html = await response.text();
   assert.match(html, /<title>AIMRO \| Industrial Robotics AI<\/title>/i);
   assert.match(html, /Teaching robots how assembly work gets done/);
+  assert.match(html, /About AIMRO/);
+  assert.match(html, /From demonstration to robot action/);
+  assert.match(html, /manufacturing-workcell\.jpg/);
+  assert.match(html, /perception-visualization\.jpg/);
   assert.match(html, /Meet AIMEX/);
   assert.match(html, /AIM Tower/);
   assert.match(html, /AIM AI Operating System \(AIOS\)/);
@@ -43,6 +47,7 @@ test("server-renders the AIMRO homepage", async () => {
   assert.match(html, /Herndon, VA 20170/);
   assert.match(html, /\/images\/aimex-hero\.jpg/);
   assert.match(html, /\/careers\/robotics-ai-engineering-intern/);
+  assert.doesNotMatch(html, /View Open Roles/);
   assert.doesNotMatch(
     html,
     /50%|\$1\.36T|\$800B|customers? (?:are )?in (?:the )?pipeline|100% IP|Harvard|MIT/i,

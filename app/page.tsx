@@ -59,6 +59,24 @@ const productLayers = [
   },
 ];
 
+const workflowSteps = [
+  {
+    number: "01",
+    title: "Demonstrate",
+    body: "A person performs the task while cameras capture the work area, objects, and motion.",
+  },
+  {
+    number: "02",
+    title: "Interpret",
+    body: "Perception and learning models organize the scene and the sequence of actions involved.",
+  },
+  {
+    number: "03",
+    title: "Transfer",
+    body: "The task is tested in simulation and connected to a physical robot workcell.",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -78,8 +96,8 @@ export default function Home() {
               <a className="button button-primary" href="#technology">
                 Explore Our Technology
               </a>
-              <a className="button button-secondary" href="#careers">
-                View Open Roles
+              <a className="button button-secondary" href="#about">
+                About AIMRO
               </a>
             </div>
           </div>
@@ -171,6 +189,53 @@ export default function Home() {
                   </div>
                 </article>
               ))}
+            </div>
+          </div>
+
+          <div className="aimex-workflow" id="aimex-workflow">
+            <div className="workflow-intro">
+              <div>
+                <p className="eyebrow">How the pieces connect</p>
+                <h3>From demonstration to robot action</h3>
+              </div>
+              <p>
+                AIMEX brings observation, perception, simulation, and robot
+                integration into a practical development workflow for
+                manufacturing tasks.
+              </p>
+            </div>
+
+            <ol className="workflow-steps">
+              {workflowSteps.map((step) => (
+                <li className="workflow-step" key={step.number}>
+                  <span>{step.number}</span>
+                  <h4>{step.title}</h4>
+                  <p>{step.body}</p>
+                </li>
+              ))}
+            </ol>
+
+            <div className="workflow-media">
+              <figure>
+                <img
+                  src="/images/manufacturing-workcell.jpg"
+                  alt="Industrial robot arm operating in a manufacturing workcell"
+                  width="1400"
+                  height="933"
+                  loading="lazy"
+                />
+                <figcaption>Industrial robot workcell</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="/images/perception-visualization.jpg"
+                  alt="Color-coded machine vision view of industrial equipment"
+                  width="1000"
+                  height="566"
+                  loading="lazy"
+                />
+                <figcaption>Example of visual perception data</figcaption>
+              </figure>
             </div>
           </div>
 
