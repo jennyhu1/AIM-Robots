@@ -113,9 +113,21 @@ Edit the CSS variables at the top of [`app/globals.css`](app/globals.css):
 --brand-soft: #fff1f1;
 ```
 
+## Legacy content reference
+
+The company and technology copy was selectively informed by the previous
+[`haider-sama/web-templates`](https://github.com/haider-sama/web-templates)
+prototype. The current site keeps its own React/Vinext implementation and visual
+system. Market-size figures, cost and deployment claims, customer or partnership
+claims, broad hardware catalogs, go-to-market material, and placeholder sections
+from the prototype were intentionally excluded.
+
 ## Pre-launch confirmation checklist
 
 - [ ] Confirm the public relationship between the display brand `AIMRO` and legal company name `AIM Robots, Inc.`.
+- [ ] Confirm the current product naming hierarchy. The current project presents `AIMEX` as the core platform; the legacy site describes `AIM AI Operating System (AIOS)` as the umbrella architecture and expands `AIMEX` as `AIM Executor`.
+- [ ] Confirm whether `AIM Tower` is an active product name, a planned product, or an internal concept, and approve the public description of its line-level coordination role.
+- [ ] Confirm that material handling and vision-based inspection should remain public target applications rather than current delivered capabilities.
 - [ ] Confirm the founder's full name is `Jeff Cui` and the public title should be `Founder & CEO`. The supplied deck also says `Founder, CEO & CPO`.
 - [ ] Confirm the public wording of Jeff Cui's manufacturing, factory reshoring, and BS/MS background at Tsinghua University and the University of Maryland.
 - [ ] Confirm the supplied founder portrait is current and cleared for website use.

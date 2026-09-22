@@ -7,7 +7,7 @@ const capabilities = [
   {
     number: "01",
     title: "Learning from human demonstrations",
-    body: "AIMEX is designed to learn assembly work from examples performed by people, helping translate practical know-how into robot actions.",
+    body: "AIMEX is designed to learn assembly work from examples performed by people, capturing practical know-how without programming every motion by hand.",
   },
   {
     number: "02",
@@ -26,6 +26,39 @@ const capabilities = [
   },
 ];
 
+const manufacturingChallenges = [
+  {
+    title: "Skilled workers are difficult to replace",
+    body: "Critical production knowledge often lives with individual people and can be hard to reproduce across shifts or facilities.",
+  },
+  {
+    title: "Tasks keep changing",
+    body: "Products, parts, and processes change, while conventional automation is usually built around a fixed sequence.",
+  },
+  {
+    title: "Reprogramming adds friction",
+    body: "Adapting a traditional robot to new work can require specialized programming and additional integration effort.",
+  },
+];
+
+const productLayers = [
+  {
+    scope: "Workcell",
+    title: "AIMEX",
+    body: "The primary platform under development, focused on learning from human demonstrations and executing robot tasks within an individual workcell.",
+  },
+  {
+    scope: "Production line",
+    title: "AIM Tower",
+    body: "A planned line-level layer intended to coordinate robot work and production flow across multiple workcells.",
+  },
+  {
+    scope: "System architecture",
+    title: "AIM AIOS",
+    body: "The broader software architecture intended to connect workcell learning and execution with line-level coordination.",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -34,11 +67,12 @@ export default function Home() {
       <main id="home">
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="eyebrow">Industrial robotics, taught by people</p>
+            <p className="eyebrow">AI-powered robotics for manufacturing</p>
             <h1 id="hero-title">Teaching robots how assembly work gets done</h1>
             <p className="hero-intro">
-              AIMRO is developing AIMEX, an AI platform that turns human
-              demonstrations into actions industrial robots can perform.
+              AIMRO is developing AIMEX to help industrial robots learn assembly
+              work from human demonstrations, making automation easier to adapt
+              without programming every step by hand.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#technology">
@@ -67,18 +101,33 @@ export default function Home() {
             <p>About AIMRO</p>
           </div>
           <div className="about-content">
-            <h2>AI for practical industrial assembly</h2>
+            <h2>AI-powered robotics for adaptable manufacturing</h2>
             <div className="about-copy">
               <p>
-                AIMRO develops AIMEX, an AI platform that teaches industrial
-                robots to perform assembly tasks by learning from human
-                demonstrations.
+                AIMRO develops AI-driven robot technology for manufacturers. Its
+                core product, AIMEX, is being built to teach industrial robots
+                assembly tasks from human demonstrations.
               </p>
               <p>
                 The team brings together computer vision, simulation, and robot
-                integration to turn human demonstrations into robot actions.
-                AIMRO has a lab in Herndon, Virginia.
+                integration to translate practical human know-how into robot
+                actions. AIMRO operates a lab in Herndon, Virginia.
               </p>
+            </div>
+          </div>
+
+          <div className="manufacturing-context">
+            <div>
+              <p className="eyebrow">The manufacturing challenge</p>
+              <h3>Why more adaptable automation matters</h3>
+            </div>
+            <div className="manufacturing-problems">
+              {manufacturingChallenges.map((challenge) => (
+                <article className="manufacturing-problem" key={challenge.title}>
+                  <h4>{challenge.title}</h4>
+                  <p>{challenge.body}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -92,12 +141,13 @@ export default function Home() {
           <div className="technology-intro">
             <div>
               <p className="eyebrow">Meet AIMEX</p>
-              <h2>A learning platform for industrial robot work</h2>
+              <h2>A practical learning and execution stack for industrial robots</h2>
             </div>
             <p>
-              AIMEX brings perception, simulation, and physical robot systems
-              into one development loop. The goal is to help robots learn
-              assembly tasks from the way people perform them.
+              AIMEX connects perception, simulation, demonstration data, and
+              physical robots in one development loop. The focus is helping
+              workcells learn assembly tasks and adapt as manufacturing needs
+              change.
             </p>
           </div>
 
@@ -121,6 +171,42 @@ export default function Home() {
                   </div>
                 </article>
               ))}
+            </div>
+          </div>
+
+          <div className="product-system">
+            <div className="product-system-intro">
+              <div>
+                <p className="eyebrow">Product direction</p>
+                <h3>From one workcell to the production line</h3>
+              </div>
+              <p>
+                AIMEX is the current development focus. AIM Tower and the broader
+                AIM AI Operating System (AIOS) describe how the technology could
+                extend from individual robot workcells to line-level coordination.
+              </p>
+            </div>
+
+            <div className="product-layer-list">
+              {productLayers.map((layer, index) => (
+                <article className="product-layer" key={layer.title}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <div>
+                    <p>{layer.scope}</p>
+                    <h3>{layer.title}</h3>
+                    <p className="product-layer-body">{layer.body}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="application-direction">
+              <p className="eyebrow">Application direction</p>
+              <p>
+                Assembly is the current development focus. Material handling and
+                vision-based inspection are target applications as the platform
+                develops.
+              </p>
             </div>
           </div>
         </section>

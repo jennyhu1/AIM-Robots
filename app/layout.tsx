@@ -4,7 +4,7 @@ import "./globals.css";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const title = "AIMRO | Industrial Robotics AI";
 const description =
-  "AIMRO develops AIMEX, an AI platform that teaches industrial robots assembly tasks from human demonstrations.";
+  "AIMRO develops AIMEX, an AI platform that helps industrial robots learn assembly tasks from human demonstrations.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og.png",
-        width: 1730,
-        height: 909,
+        width: 1200,
+        height: 630,
         alt: "AIMRO — Industrial robotics, taught by people",
       },
     ],
@@ -49,4 +49,3 @@ export default function RootLayout({
     </html>
   );
 }
-
