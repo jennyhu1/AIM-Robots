@@ -41,7 +41,9 @@ Before a public build, set `NEXT_PUBLIC_SITE_URL` to the final HTTPS origin so s
 NEXT_PUBLIC_SITE_URL=https://example.com npm run build
 ```
 
-No production deployment has been performed. Publish only after the preview and the checklist below are approved.
+The GitHub `main` branch is connected to the current Cloudflare preview. The
+custom-domain production launch should wait until the preview and the checklist
+below are approved.
 
 ## Maintenance guide
 
