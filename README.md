@@ -140,6 +140,7 @@ confirmed before the final domain launch.
 - [ ] Confirm that material handling and vision-based inspection should remain public target applications rather than current delivered capabilities.
 - [ ] Confirm that AIMRO has permission to publish the two images carried over from the legacy repository.
 - [ ] Confirm that the visible people in the background of the industrial workcell photograph are acceptable for public use.
+- [ ] Confirm that the embedded labels and temperature-style values in the machine-vision visualization are suitable for public display and do not imply validated AIMRO performance data.
 - [ ] Confirm the founder's full name is `Jeff Cui` and the public title should be `Founder & CEO`. The supplied deck also says `Founder, CEO & CPO`.
 - [ ] Confirm the public wording of Jeff Cui's manufacturing, factory reshoring, and BS/MS background at Tsinghua University and the University of Maryland.
 - [ ] Confirm the supplied founder portrait is current and cleared for website use.
