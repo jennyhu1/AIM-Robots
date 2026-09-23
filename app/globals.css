@@ -2166,7 +2166,8 @@ h3 {
   }
 
   .technology-stage-panel img {
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center top;
   }
 
   .technology-stage-copy {
