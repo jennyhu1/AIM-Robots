@@ -1,81 +1,13 @@
 /* eslint-disable @next/next/no-img-element -- Source photos are already compressed and served directly. */
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
+import {
+  ChallengeExplorer,
+  ProductArchitecture,
+  TechnologyExplorer,
+  WorkflowExplorer,
+} from "./components/InteractiveSections";
 import { OPEN_ROLE, SITE } from "./site-data";
-
-const capabilities = [
-  {
-    number: "01",
-    title: "Learning from human demonstrations",
-    body: "AIMEX is designed to learn assembly work from examples performed by people, capturing practical know-how without programming every motion by hand.",
-  },
-  {
-    number: "02",
-    title: "Computer vision and perception",
-    body: "Cameras and vision models help the system interpret the work area, the objects involved, and what is happening during a task.",
-  },
-  {
-    number: "03",
-    title: "Simulation and synthetic data",
-    body: "Simulation creates controlled environments and additional training data before work moves to physical equipment.",
-  },
-  {
-    number: "04",
-    title: "Robot integration",
-    body: "The team connects perception and learned actions with cameras, grippers, and industrial robot arms in the lab.",
-  },
-];
-
-const manufacturingChallenges = [
-  {
-    title: "Skilled workers are difficult to replace",
-    body: "Critical production knowledge often lives with individual people and can be hard to reproduce across shifts or facilities.",
-  },
-  {
-    title: "Tasks keep changing",
-    body: "Products, parts, and processes change, while conventional automation is usually built around a fixed sequence.",
-  },
-  {
-    title: "Reprogramming adds friction",
-    body: "Adapting a traditional robot to new work can require specialized programming and additional integration effort.",
-  },
-];
-
-const productLayers = [
-  {
-    scope: "Workcell",
-    title: "AIMEX",
-    body: "The primary platform under development, focused on learning from human demonstrations and executing robot tasks within an individual workcell.",
-  },
-  {
-    scope: "Production line",
-    title: "AIM Tower",
-    body: "A planned line-level layer intended to coordinate robot work and production flow across multiple workcells.",
-  },
-  {
-    scope: "System architecture",
-    title: "AIM AIOS",
-    body: "The broader software architecture intended to connect workcell learning and execution with line-level coordination.",
-  },
-];
-
-const workflowSteps = [
-  {
-    number: "01",
-    title: "Demonstrate",
-    body: "A person performs the task while cameras capture the work area, objects, and motion.",
-  },
-  {
-    number: "02",
-    title: "Interpret",
-    body: "Perception and learning models organize the scene and the sequence of actions involved.",
-  },
-  {
-    number: "03",
-    title: "Transfer",
-    body: "The task is tested in simulation and connected to a physical robot workcell.",
-  },
-];
 
 export default function Home() {
   return (
@@ -139,19 +71,7 @@ export default function Home() {
               <p className="eyebrow">The manufacturing challenge</p>
               <h3>Why more adaptable automation matters</h3>
             </div>
-            <div className="manufacturing-problems">
-              {manufacturingChallenges.map((challenge, index) => (
-                <article className="manufacturing-problem" key={challenge.title}>
-                  <span className="challenge-index">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h4>{challenge.title}</h4>
-                    <p>{challenge.body}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
+            <ChallengeExplorer />
           </div>
         </section>
 
@@ -174,32 +94,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="technology-layout">
-            <figure className="system-visual">
-              <img
-                src="/images/manufacturing-workcell.jpg"
-                alt="Industrial robot arm operating in a manufacturing workcell"
-                width="1400"
-                height="933"
-              />
-              <figcaption>
-                <span>Robot integration context</span>
-                <strong>Industrial workcell</strong>
-              </figcaption>
-            </figure>
-
-            <div className="capability-list">
-              {capabilities.map((capability) => (
-                <article className="capability" key={capability.number}>
-                  <span>{capability.number}</span>
-                  <div>
-                    <h3>{capability.title}</h3>
-                    <p>{capability.body}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
+          <TechnologyExplorer />
 
           <div className="aimex-workflow" id="aimex-workflow">
             <div className="workflow-intro">
@@ -214,28 +109,7 @@ export default function Home() {
               </p>
             </div>
 
-            <ol className="workflow-steps">
-              {workflowSteps.map((step) => (
-                <li className="workflow-step" key={step.number}>
-                  <span>{step.number}</span>
-                  <h4>{step.title}</h4>
-                  <p>{step.body}</p>
-                </li>
-              ))}
-            </ol>
-
-            <div className="workflow-media workflow-media-single">
-              <figure>
-                <img
-                  src="/images/perception-visualization.jpg"
-                  alt="Color-coded machine vision view of industrial equipment"
-                  width="1000"
-                  height="566"
-                  loading="lazy"
-                />
-                <figcaption>Example of visual perception data</figcaption>
-              </figure>
-            </div>
+            <WorkflowExplorer />
           </div>
 
           <div className="product-system">
@@ -251,18 +125,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="product-layer-list">
-              {productLayers.map((layer, index) => (
-                <article className="product-layer" key={layer.title}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <div>
-                    <p>{layer.scope}</p>
-                    <h3>{layer.title}</h3>
-                    <p className="product-layer-body">{layer.body}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
+            <ProductArchitecture />
 
             <div className="application-direction">
               <p className="eyebrow">Application direction</p>
