@@ -13,11 +13,14 @@ export function SiteFooter() {
         </div>
 
         <nav className="footer-nav" aria-label="Footer navigation">
-          {NAV_ITEMS.map((item) => (
-            <Link key={item.label} href={`/${item.href}`}>
-              {item.label}
-            </Link>
-          ))}
+          {NAV_ITEMS.map((item) => {
+            const href = item.href.startsWith("#") ? `/${item.href}` : item.href;
+            return (
+              <Link key={item.label} href={href}>
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="footer-contact">

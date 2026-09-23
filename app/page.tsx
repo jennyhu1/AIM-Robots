@@ -140,10 +140,15 @@ export default function Home() {
               <h3>Why more adaptable automation matters</h3>
             </div>
             <div className="manufacturing-problems">
-              {manufacturingChallenges.map((challenge) => (
+              {manufacturingChallenges.map((challenge, index) => (
                 <article className="manufacturing-problem" key={challenge.title}>
-                  <h4>{challenge.title}</h4>
-                  <p>{challenge.body}</p>
+                  <span className="challenge-index">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h4>{challenge.title}</h4>
+                    <p>{challenge.body}</p>
+                  </div>
                 </article>
               ))}
             </div>
@@ -172,11 +177,15 @@ export default function Home() {
           <div className="technology-layout">
             <figure className="system-visual">
               <img
-                src="/images/aimex-system.png"
-                alt="AIMEX robotic arm with an overhead camera and mobile base"
-                width="245"
-                height="371"
+                src="/images/manufacturing-workcell.jpg"
+                alt="Industrial robot arm operating in a manufacturing workcell"
+                width="1400"
+                height="933"
               />
+              <figcaption>
+                <span>Robot integration context</span>
+                <strong>Industrial workcell</strong>
+              </figcaption>
             </figure>
 
             <div className="capability-list">
@@ -215,17 +224,7 @@ export default function Home() {
               ))}
             </ol>
 
-            <div className="workflow-media">
-              <figure>
-                <img
-                  src="/images/manufacturing-workcell.jpg"
-                  alt="Industrial robot arm operating in a manufacturing workcell"
-                  width="1400"
-                  height="933"
-                  loading="lazy"
-                />
-                <figcaption>Industrial robot workcell</figcaption>
-              </figure>
+            <div className="workflow-media workflow-media-single">
               <figure>
                 <img
                   src="/images/perception-visualization.jpg"
@@ -371,9 +370,17 @@ export default function Home() {
           </div>
 
           <div className="contact-layout">
-            <div>
+            <div className="contact-callout">
               <p className="eyebrow">Start a conversation</p>
-              <h2>Contact AIMRO</h2>
+              <h2>Let&apos;s talk about adaptable robotics.</h2>
+              <p>
+                For company, technology, and collaboration inquiries, contact
+                AIMRO directly.
+              </p>
+              <a className="button button-primary" href="/contact">
+                Contact AIMRO
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
             <div className="contact-details">
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>

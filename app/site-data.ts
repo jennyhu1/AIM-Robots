@@ -19,7 +19,7 @@ export const NAV_ITEMS = [
   { label: "Technology", href: "#technology" },
   { label: "Leadership", href: "#leadership" },
   { label: "Careers", href: "#careers" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const OPEN_ROLE = {

@@ -47,12 +47,31 @@ test("server-renders the AIMRO homepage", async () => {
   assert.match(html, /Herndon, VA 20170/);
   assert.match(html, /\/images\/aimex-hero\.jpg/);
   assert.match(html, /\/careers\/robotics-ai-engineering-intern/);
+  assert.match(html, /href="\/contact"/);
+  assert.doesNotMatch(
+    html,
+    /\/images\/(?:aimex-system|aimex-concept|aimex-material-handling-concept)\.png/,
+  );
   assert.doesNotMatch(html, /View Open Roles/);
   assert.doesNotMatch(
     html,
     /50%|\$1\.36T|\$800B|customers? (?:are )?in (?:the )?pipeline|100% IP|Harvard|MIT/i,
   );
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+});
+
+test("server-renders the standalone contact page", async () => {
+  const response = await render("/contact");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /<title>Contact \| AIMRO<\/title>/i);
+  assert.match(html, /Start a conversation about the work/);
+  assert.match(html, /jenny\.hu@aimrobots\.ai/);
+  assert.match(html, /580 Herndon Pkwy/);
+  assert.match(html, /Herndon, VA 20170/);
+  assert.match(html, /mailto:jenny\.hu@aimrobots\.ai/);
+  assert.doesNotMatch(html, /<form\b/i);
 });
 
 test("server-renders the complete role and application path", async () => {

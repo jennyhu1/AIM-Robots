@@ -51,15 +51,24 @@ export function SiteHeader({ interior = false }: SiteHeaderProps) {
         className={menuOpen ? "primary-nav primary-nav-open" : "primary-nav"}
         aria-label="Primary navigation"
       >
-        {NAV_ITEMS.map((item) => (
-          <a
-            key={item.label}
-            href={`${anchorPrefix}${item.href}`}
-            onClick={() => setMenuOpen(false)}
-          >
-            {item.label}
-          </a>
-        ))}
+        {NAV_ITEMS.map((item) => {
+          const href = item.href.startsWith("#")
+            ? `${anchorPrefix}${item.href}`
+            : item.href;
+          const isContact = item.label === "Contact";
+
+          return (
+            <a
+              className={isContact ? "nav-contact" : undefined}
+              key={item.label}
+              href={href}
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.label}
+              {isContact ? <span aria-hidden="true">↗</span> : null}
+            </a>
+          );
+        })}
       </nav>
     </header>
   );

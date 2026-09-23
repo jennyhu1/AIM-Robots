@@ -5,6 +5,7 @@ A concise, English-language company and recruiting site for AIMRO and its AIMEX 
 ## Pages
 
 - `/` — company homepage with About, Technology, Leadership, Careers, and Contact sections
+- `/contact` — standalone contact page with direct email and office address
 - `/careers/robotics-ai-engineering-intern` — complete internship description and email application instructions
 
 The site contains no database, login, form submission, tracking, or recruitment backend. Applications open the visitor's own email app.
@@ -59,6 +60,9 @@ Edit [`app/site-data.ts`](app/site-data.ts) to change:
 - role title, logistics, URL, and open/closed status
 
 The email address and role settings are centralized so the homepage and job page stay consistent.
+Edit [`app/contact/page.tsx`](app/contact/page.tsx) to change the standalone
+contact-page headings or explanatory copy; its email and address still come
+from `app/site-data.ts`.
 
 ### Open or close the role
 
@@ -99,7 +103,8 @@ To replace the downloadable PDF, keep the same filename:
 Web-ready copies are in `public/images/`. The original PPT remains unchanged in the project root.
 
 - `aimex-hero.jpg` — homepage hero
-- `aimex-system.png` — AIMEX system cutout
+- `manufacturing-workcell.jpg` — industrial workcell context image from the legacy site
+- `perception-visualization.jpg` — visual-perception example from the legacy site
 - `jeff-cui.jpg` — founder portrait
 - `og.png` — social-share preview
 
@@ -124,8 +129,8 @@ system. Market-size figures, cost and deployment claims, customer or partnership
 claims, broad hardware catalogs, go-to-market material, and placeholder sections
 from the prototype were intentionally excluded.
 
-Two visuals from that repository add manufacturing context: an industrial robot
-workcell photograph and a machine-vision visualization. Their untouched source
+Two visuals from that repository add manufacturing context: an industrial
+robot workcell photograph and a machine-vision visualization. Their untouched source
 files remain available in the legacy repository and are also preserved locally
 under the ignored `source-assets/legacy-web/` folder; compressed copies in
 `public/images/` are served by the site. The workcell photograph contains
