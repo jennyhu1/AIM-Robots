@@ -8,7 +8,7 @@ import { SITE } from "../site-data";
 export const metadata: Metadata = {
   title: "About AIMRO",
   description:
-    "Learn about AIMRO, its approach to adaptable manufacturing robotics, founder Jeff Cui, and its lab in Herndon, Virginia.",
+    "Learn about AIMRO, its approach to adaptable manufacturing robotics, leadership team, and lab in Herndon, Virginia.",
 };
 
 const waysOfWorking = [
@@ -23,6 +23,29 @@ const waysOfWorking = [
   {
     title: "Make task knowledge reusable",
     body: "The long-term direction is to capture practical know-how in a form that can be checked, adapted, and applied again.",
+  },
+];
+
+const leadershipTeam = [
+  {
+    name: "William Noe",
+    role: "Interim CFO",
+    bio: "Finance executive with 50+ years of transaction and corporate leadership experience.",
+  },
+  {
+    name: "Jake Cui",
+    role: "VP, Product Development",
+    bio: "Product leader specializing in AI, developer tools, and technology innovation.",
+  },
+  {
+    name: "Dr. Li Zheng",
+    role: "Chief Scientist",
+    bio: "Industrial engineering expert specializing in manufacturing systems and operations.",
+  },
+  {
+    name: "Dr. Yifan Li",
+    role: "Director, Industrial AI",
+    bio: "AI and computer vision specialist focused on industrial automation and manufacturing.",
   },
 ];
 
@@ -76,32 +99,62 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="story-section founder-feature" aria-labelledby="founder-title">
-          <figure>
-            <img
-              src="/images/jeff-cui.jpg"
-              alt="Jeff Cui, Founder and CEO of AIMRO"
-              width="398"
-              height="498"
-            />
-          </figure>
-          <div>
-            <p className="eyebrow">Leadership</p>
-            <h2 id="founder-title">Jeff Cui</h2>
-            <p className="founder-role">Founder &amp; CEO</p>
+        <section className="story-section team-section" aria-labelledby="leadership-title">
+          <div className="team-section-header">
+            <div>
+              <p className="eyebrow">Leadership</p>
+              <h2 id="leadership-title">A team spanning robotics, manufacturing, product, and finance</h2>
+            </div>
             <p>
-              Jeff Cui is the Founder and CEO of AIM Robots, Inc. He is a
-              manufacturing and robotics automation entrepreneur focused on
-              factory reshoring and industrial automation.
+              AIMRO&apos;s leadership brings together the technical and operating
+              experience needed to develop industrial AI and connect it with
+              real manufacturing systems.
             </p>
-            <a
-              className="text-link"
-              href={SITE.linkedIn}
-              target="_blank"
-              rel="noreferrer"
-            >
-              View LinkedIn <span aria-hidden="true">↗</span>
-            </a>
+          </div>
+
+          <div className="team-roster">
+            <article className="team-lead">
+              <figure>
+                <img
+                  src="/images/jeff-cui.jpg"
+                  alt="Jeff Cui, Founder and CEO of AIMRO"
+                  width="398"
+                  height="498"
+                />
+              </figure>
+              <div className="team-lead-copy">
+                <p className="team-member-label">Founder</p>
+                <h3>Jeff Cui</h3>
+                <p className="team-role">Founder &amp; CEO</p>
+                <p>
+                  Manufacturing and robotics entrepreneur focused on factory
+                  reshoring and industrial automation.
+                </p>
+                <a
+                  className="text-link"
+                  href={SITE.linkedIn}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View LinkedIn <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <div className="team-members">
+              {leadershipTeam.map((member, index) => (
+                <article className="team-member" key={member.name}>
+                  <span className="team-member-number" aria-hidden="true">
+                    {String(index + 2).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3>{member.name}</h3>
+                    <p className="team-role">{member.role}</p>
+                    <p>{member.bio}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 

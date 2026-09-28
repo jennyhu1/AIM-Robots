@@ -97,7 +97,7 @@ test("server-renders development and target application states", async () => {
   assert.match(html, /does not present these capabilities as a broadly deployed commercial product/);
 });
 
-test("server-renders the company and founder page", async () => {
+test("server-renders the company and leadership page", async () => {
   const response = await render("/about");
   assert.equal(response.status, 200);
 
@@ -106,6 +106,10 @@ test("server-renders the company and founder page", async () => {
   assert.match(html, /Building a more adaptable way to automate manufacturing/);
   assert.match(html, /Jeff Cui/);
   assert.match(html, /Founder &amp; CEO/);
+  assert.match(html, /William Noe/);
+  assert.match(html, /Jake Cui/);
+  assert.match(html, /Dr\. Li Zheng/);
+  assert.match(html, /Dr\. Yifan Li/);
   assert.match(html, /AIM Robots, Inc\./);
   assert.match(html, /580 Herndon Pkwy/);
   assert.match(html, /Herndon, VA 20170/);

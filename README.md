@@ -165,6 +165,8 @@ confirmed before the final domain launch.
 - [ ] Confirm that the visible people in the background of the industrial workcell photograph are acceptable for public use.
 - [ ] Confirm that the embedded labels and temperature-style values in the machine-vision visualization are suitable for public display and do not imply validated AIMRO performance data.
 - [ ] Confirm the founder's full name is `Jeff Cui` and the public title should be `Founder & CEO`. The supplied deck also says `Founder, CEO & CPO`.
+- [ ] Confirm the current names, titles, and public biographies for William Noe, Jake Cui, Dr. Li Zheng, and Dr. Yifan Li. The About page follows the `OUR TEAM` slide in `AIM Robots V4-suggestions.pptx`.
+- [ ] Confirm whether the four additional leadership portraits in `AIM Robots V4-suggestions.pptx` are cleared for publication before adding them to the public site.
 - [ ] Confirm the public wording of Jeff Cui's manufacturing, factory reshoring, and BS/MS background at Tsinghua University and the University of Maryland.
 - [ ] Confirm the supplied founder portrait is current and cleared for website use.
 - [ ] Confirm the PPT's AIMEX imagery represents the current robot system and is cleared for public use. The main source image has a digitally rendered/composited appearance and includes embedded interface-style text.
