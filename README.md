@@ -37,7 +37,7 @@ npm test
 npm run lint
 ```
 
-The project uses the Cloudflare-compatible vinext build included in the starter. For Cloudflare Pages/Workers, connect the repository, use `npm run build` as the build command, and configure the generated worker output according to the hosting dashboard. The site itself is static content and does not require a database or server-side application logic.
+The project uses the Cloudflare-compatible vinext build included in the starter. In Cloudflare Workers Builds, use `pnpm run build` as the build command and `pnpm exec wrangler deploy --config dist/server/wrangler.json` as the deploy command. The Cloudflare project name and generated Worker name are both `aim-robots`. The site does not require a database or separate application backend.
 
 Before a public build, set `NEXT_PUBLIC_SITE_URL` to the final HTTPS origin so social-share metadata uses the correct absolute URL:
 

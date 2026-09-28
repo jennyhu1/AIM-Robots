@@ -1,7 +1,8 @@
 "use client";
 
+/* eslint-disable @next/next/no-html-link-for-pages -- Full document navigation keeps the header reliable on the deployed Cloudflare Worker even if client-side routing is unavailable. */
+
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { NAV_ITEMS } from "../site-data";
 
 export function SiteHeader() {
@@ -20,13 +21,13 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
-      <Link
+      <a
         className="wordmark"
         href="/"
         aria-label="AIMRO home"
       >
         AIMRO
-      </Link>
+      </a>
 
       <button
         className="menu-button"
@@ -50,7 +51,7 @@ export function SiteHeader() {
           const isContact = item.label === "Contact";
 
           return (
-            <Link
+            <a
               className={isContact ? "nav-contact" : undefined}
               key={item.label}
               href={item.href}
@@ -58,7 +59,7 @@ export function SiteHeader() {
             >
               {item.label}
               {isContact ? <span aria-hidden="true">↗</span> : null}
-            </Link>
+            </a>
           );
         })}
       </nav>
