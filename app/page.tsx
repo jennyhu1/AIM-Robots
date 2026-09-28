@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
-import { OPEN_ROLE, SITE } from "./site-data";
+import { SITE } from "./site-data";
 
 const learningPath = [
   {
@@ -187,8 +187,8 @@ export default function Home() {
                 <img
                   src="/images/aim-aios-architecture.png"
                   alt="AIM AI Operating System architecture showing AIM Tower above AIMEX, connected by execution, status, and feedback flows, with supported robotic equipment below"
-                  width="1600"
-                  height="900"
+                  width="2048"
+                  height="1154"
                   loading="lazy"
                 />
               </a>
@@ -298,48 +298,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
-
-        <section className="home-section home-careers" id="careers">
-          <header className="section-heading section-heading-split careers-heading">
-            <div>
-              <p className="eyebrow">Careers</p>
-              <h2>Build across software and hardware</h2>
-            </div>
-            <p>
-              AIMRO is a small team working on real robotics systems. The work
-              moves between vision models, simulation, cameras, robot arms, and
-              the practical details that make hardware function.
-            </p>
-          </header>
-
-          <article className="position">
-            <div className="position-status">
-              <span className={OPEN_ROLE.open ? "status-dot" : "status-dot closed"} />
-              {OPEN_ROLE.open ? "Open position" : "Position closed"}
-            </div>
-
-            <div className="position-heading">
-              <div>
-                <h3>{OPEN_ROLE.title}</h3>
-                <p>{OPEN_ROLE.subtitle}</p>
-              </div>
-              {OPEN_ROLE.open ? (
-                <Link className="button button-secondary" href={OPEN_ROLE.href}>
-                  View Position
-                </Link>
-              ) : (
-                <span className="closed-label">Position Closed</span>
-              )}
-            </div>
-
-            <ul className="position-meta" aria-label="Position details">
-              <li>{OPEN_ROLE.location}</li>
-              <li>{OPEN_ROLE.workplace}</li>
-              <li>{OPEN_ROLE.type}</li>
-              <li>{OPEN_ROLE.compensation}</li>
-            </ul>
-          </article>
         </section>
 
         <section className="home-section home-contact" id="contact">

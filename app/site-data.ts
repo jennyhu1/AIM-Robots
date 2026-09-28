@@ -18,7 +18,7 @@ export const NAV_ITEMS = [
   { label: "AIMEX", href: "/aimex" },
   { label: "Applications", href: "/applications" },
   { label: "About", href: "/about" },
-  { label: "Careers", href: "/#careers" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ] as const;
 

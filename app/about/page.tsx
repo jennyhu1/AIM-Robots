@@ -31,21 +31,33 @@ const leadershipTeam = [
     name: "William Noe",
     role: "Interim CFO",
     bio: "Finance executive with 50+ years of transaction and corporate leadership experience.",
+    image: "/images/william-noe.jpg",
+    width: 496,
+    height: 620,
   },
   {
     name: "Jake Cui",
     role: "VP, Product Development",
     bio: "Product leader specializing in AI, developer tools, and technology innovation.",
+    image: "/images/jake-cui.jpg",
+    width: 497,
+    height: 620,
   },
   {
     name: "Dr. Li Zheng",
     role: "Chief Scientist",
     bio: "Industrial engineering expert specializing in manufacturing systems and operations.",
+    image: "/images/li-zheng.jpg",
+    width: 496,
+    height: 620,
   },
   {
     name: "Dr. Yifan Li",
     role: "Director, Industrial AI",
     bio: "AI and computer vision specialist focused on industrial automation and manufacturing.",
+    image: "/images/yifan-li.jpg",
+    width: 504,
+    height: 620,
   },
 ];
 
@@ -142,11 +154,15 @@ export default function AboutPage() {
             </article>
 
             <div className="team-members">
-              {leadershipTeam.map((member, index) => (
+              {leadershipTeam.map((member) => (
                 <article className="team-member" key={member.name}>
-                  <span className="team-member-number" aria-hidden="true">
-                    {String(index + 2).padStart(2, "0")}
-                  </span>
+                  <img
+                    src={member.image}
+                    alt={`${member.name}, ${member.role} at AIMRO`}
+                    width={member.width}
+                    height={member.height}
+                    loading="lazy"
+                  />
                   <div>
                     <h3>{member.name}</h3>
                     <p className="team-role">{member.role}</p>
@@ -185,7 +201,7 @@ export default function AboutPage() {
             <h2>Join a small team working across robotics AI and real hardware.</h2>
           </div>
           <div className="page-cta-actions">
-            <Link className="button button-primary" href="/#careers">
+            <Link className="button button-primary" href="/careers">
               View Open Roles
             </Link>
             <Link className="button button-secondary" href="/contact">

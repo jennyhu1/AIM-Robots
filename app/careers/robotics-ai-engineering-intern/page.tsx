@@ -31,7 +31,7 @@ export default function RoboticsAiEngineeringInternPage() {
 
       <main className="job-page">
         <header className="job-hero">
-          <Link className="back-link" href="/#careers">
+          <Link className="back-link" href="/careers">
             <span aria-hidden="true">←</span>
             Careers
           </Link>

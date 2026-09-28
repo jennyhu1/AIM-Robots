@@ -4,10 +4,11 @@ A concise, English-language company and recruiting site for AIMRO and its AIMEX 
 
 ## Pages
 
-- `/` — company homepage with a concise company, technology, applications, leadership, careers, and contact story
+- `/` — company homepage with a concise company, technology, applications, leadership, and contact story
 - `/aimex` — AIMEX learning, execution, perception, and system-building blocks
 - `/applications` — assembly development focus and target directions in material handling and visual inspection
 - `/about` — company approach, founder, and Herndon lab
+- `/careers` — careers overview and current open positions
 - `/contact` — standalone contact page with direct email and office address
 - `/careers/robotics-ai-engineering-intern` — complete internship description and email application instructions
 
@@ -62,7 +63,7 @@ Edit [`app/site-data.ts`](app/site-data.ts) to change:
 - Jeff Cui's LinkedIn URL
 - role title, logistics, URL, and open/closed status
 
-The email address and role settings are centralized so the homepage and job page stay consistent.
+The email address and role settings are centralized so the careers overview and job page stay consistent.
 Edit [`app/contact/page.tsx`](app/contact/page.tsx) to change the standalone
 contact-page headings or explanatory copy; its email and address still come
 from `app/site-data.ts`.
@@ -81,13 +82,14 @@ to:
 open: false
 ```
 
-When closed, the homepage shows `Position Closed`, and the job page hides the email application buttons.
+When closed, the careers page shows `Position Closed`, and the job page hides the email application buttons.
 
 ### Company, technology, applications, careers, and founder copy
 
 Edit these files:
 
-- `app/page.tsx` — homepage overview, technology preview, applications preview, leadership, careers, and contact
+- `app/page.tsx` — homepage overview, technology preview, applications preview, leadership, and contact
+- `app/careers/page.tsx` — careers overview and current open position
 - `app/aimex/page.tsx` — detailed AIMEX and AIM AIOS explanation
 - `app/applications/page.tsx` — application status and manufacturing-task fit
 - `app/about/page.tsx` — company, founder, and lab information
@@ -106,11 +108,12 @@ Web-ready copies are in `public/images/`. The original PPT remains unchanged in 
 
 - `aimex-hero.jpg` — homepage hero
 - `aimex-demo-hardware.jpg` — real hardware image extracted from the supplied `AIM Robots V4-suggestions.pptx` and compressed for the web
-- `aim-aios-architecture.png` — web copy of slide 6 from the supplied cold-email deck; replace this file to update the architecture screenshot
+- `aim-aios-architecture.png` — approved AIM AIOS architecture image supplied on September 28, 2026; replace this file to update the architecture screenshot
 - `manufacturing-workcell.jpg` — industrial workcell context image from the legacy site
 - `perception-visualization.jpg` — visual-perception example from the legacy site
 - `application-robot-arm.jpg`, `application-material-handling.jpg`, `application-operator-console.jpg`, and `application-machine-equipment.jpg` — compressed copies from the project-level `Photos/` folder; the public page labels these as illustrative contexts rather than delivered products
 - `jeff-cui.jpg` — founder portrait
+- `william-noe.jpg`, `jake-cui.jpg`, `li-zheng.jpg`, and `yifan-li.jpg` — leadership portraits approved for public use and extracted from the supplied team presentation
 - `og.png` — social-share preview
 
 Replace an image with the same filename to avoid editing page code. Preserve the current aspect ratio where possible and verify the crop on mobile.
@@ -166,13 +169,11 @@ confirmed before the final domain launch.
 - [ ] Confirm that the embedded labels and temperature-style values in the machine-vision visualization are suitable for public display and do not imply validated AIMRO performance data.
 - [ ] Confirm the founder's full name is `Jeff Cui` and the public title should be `Founder & CEO`. The supplied deck also says `Founder, CEO & CPO`.
 - [ ] Confirm the current names, titles, and public biographies for William Noe, Jake Cui, Dr. Li Zheng, and Dr. Yifan Li. The About page follows the `OUR TEAM` slide in `AIM Robots V4-suggestions.pptx`.
-- [ ] Confirm whether the four additional leadership portraits in `AIM Robots V4-suggestions.pptx` are cleared for publication before adding them to the public site.
 - [ ] Confirm the public wording of Jeff Cui's manufacturing, factory reshoring, and BS/MS background at Tsinghua University and the University of Maryland.
 - [ ] Confirm the supplied founder portrait is current and cleared for website use.
 - [ ] Confirm the PPT's AIMEX imagery represents the current robot system and is cleared for public use. The main source image has a digitally rendered/composited appearance and includes embedded interface-style text.
 - [ ] Confirm that the concept images from the project-level `Photos/` folder are cleared for public use as illustrative application contexts. They appear digitally generated and should not be presented as current shipped hardware.
 - [ ] Confirm that the operator-console concept image is suitable for public use. It includes a person shown from behind and visible interface-style screen content.
-- [ ] Confirm that slide 6 from the supplied cold-email deck may be published directly as the AIM AIOS architecture image. It includes the footer `Investor Introduction | 2026`.
 - [ ] Confirm that the internship is open, paid, part-time, hybrid, and based in Herndon, Virginia.
 - [ ] Confirm that the original JD PDF is the version to publish.
 - [ ] Confirm `jenny.hu@aimrobots.ai` as the public contact and application email.

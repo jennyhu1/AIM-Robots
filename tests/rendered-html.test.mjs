@@ -42,12 +42,11 @@ test("server-renders the AIMRO homepage", async () => {
   assert.match(html, /Material handling/);
   assert.match(html, /Visual inspection/);
   assert.match(html, /Jeff Cui/);
-  assert.match(html, /Robotics AI Engineering Intern/);
   assert.match(html, /jenny\.hu@aimrobots\.ai/);
   assert.match(html, /580 Herndon Pkwy/);
   assert.match(html, /Herndon, VA 20170/);
   assert.match(html, /\/images\/aimex-hero\.jpg/);
-  assert.match(html, /\/careers\/robotics-ai-engineering-intern/);
+  assert.match(html, /href="\/careers"/);
   assert.match(html, /href="\/contact"/);
   assert.match(html, /href="\/aimex"/);
   assert.match(html, /href="\/applications"/);
@@ -57,6 +56,7 @@ test("server-renders the AIMRO homepage", async () => {
     /\/images\/(?:aimex-system|aimex-concept|aimex-material-handling-concept)\.png/,
   );
   assert.doesNotMatch(html, /View Open Roles/);
+  assert.doesNotMatch(html, /id="careers"/);
   assert.doesNotMatch(
     html,
     /50%|\$1\.36T|\$800B|customers? (?:are )?in (?:the )?pipeline|100% IP|Harvard|MIT/i,
@@ -110,9 +110,30 @@ test("server-renders the company and leadership page", async () => {
   assert.match(html, /Jake Cui/);
   assert.match(html, /Dr\. Li Zheng/);
   assert.match(html, /Dr\. Yifan Li/);
+  assert.match(html, /william-noe\.jpg/);
+  assert.match(html, /jake-cui\.jpg/);
+  assert.match(html, /li-zheng\.jpg/);
+  assert.match(html, /yifan-li\.jpg/);
   assert.match(html, /AIM Robots, Inc\./);
   assert.match(html, /580 Herndon Pkwy/);
   assert.match(html, /Herndon, VA 20170/);
+});
+
+test("server-renders the standalone careers page", async () => {
+  const response = await render("/careers");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /<title>Careers \| AIMRO<\/title>/i);
+  assert.match(html, /Build robotics AI where software meets the machine/);
+  assert.match(html, /What the work looks like/);
+  assert.match(html, /Robotics AI Engineering Intern/);
+  assert.match(html, /Perception, Simulation &amp; Robot Integration/);
+  assert.match(html, /Herndon, Virginia/);
+  assert.match(html, /Part-time Internship/);
+  assert.match(html, /\/careers\/robotics-ai-engineering-intern/);
+  assert.match(html, /aimex-demo-hardware\.jpg/);
+  assert.doesNotMatch(html, /<form\b|Handshake/i);
 });
 
 test("server-renders the standalone contact page", async () => {
@@ -148,9 +169,9 @@ test("server-renders the complete role and application path", async () => {
 });
 
 test("keeps role status and maintenance settings centralized", async () => {
-  const [data, homepage, jobPage] = await Promise.all([
+  const [data, careersPage, jobPage] = await Promise.all([
     readFile(new URL("../app/site-data.ts", import.meta.url), "utf8"),
-    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/careers/page.tsx", import.meta.url), "utf8"),
     readFile(
       new URL(
         "../app/careers/robotics-ai-engineering-intern/page.tsx",
@@ -164,8 +185,8 @@ test("keeps role status and maintenance settings centralized", async () => {
   assert.match(data, /jenny\.hu@aimrobots\.ai/);
   assert.match(data, /encodeURIComponent\(\s*applicationSubject/);
   assert.match(data, /encodeURIComponent\(applicationBody\)/);
-  assert.match(homepage, /OPEN_ROLE\.open/);
+  assert.match(careersPage, /OPEN_ROLE\.open/);
   assert.match(jobPage, /OPEN_ROLE\.open/);
   assert.match(jobPage, /Position Closed/);
-  assert.doesNotMatch(data + homepage + jobPage, /Handshake/i);
+  assert.doesNotMatch(data + careersPage + jobPage, /Handshake/i);
 });
