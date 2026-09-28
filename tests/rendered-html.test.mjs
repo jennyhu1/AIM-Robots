@@ -30,16 +30,17 @@ test("server-renders the AIMRO homepage", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>AIMRO \| Industrial Robotics AI<\/title>/i);
-  assert.match(html, /Teaching robots how assembly work gets done/);
-  assert.match(html, /About AIMRO/);
-  assert.match(html, /From demonstration to robot action/);
-  assert.match(html, /manufacturing-workcell\.jpg/);
-  assert.match(html, /perception-visualization\.jpg/);
+  assert.match(html, /Teaching industrial robots to learn work from people/);
+  assert.match(html, /Manufacturing knowledge is difficult to scale/);
+  assert.match(html, /From a human demonstration to verified robot action/);
+  assert.match(html, /aimex-demo-hardware\.jpg/);
   assert.match(html, /Meet AIMEX/);
   assert.match(html, /AIM Tower/);
-  assert.match(html, /AIM AI Operating System \(AIOS\)/);
+  assert.match(html, /AIM AI Operating System/);
+  assert.match(html, /aim-aios-architecture\.png/);
+  assert.match(html, /connected by execution, status, and feedback flows/);
   assert.match(html, /Material handling/);
-  assert.match(html, /vision-based inspection/);
+  assert.match(html, /Visual inspection/);
   assert.match(html, /Jeff Cui/);
   assert.match(html, /Robotics AI Engineering Intern/);
   assert.match(html, /jenny\.hu@aimrobots\.ai/);
@@ -48,6 +49,9 @@ test("server-renders the AIMRO homepage", async () => {
   assert.match(html, /\/images\/aimex-hero\.jpg/);
   assert.match(html, /\/careers\/robotics-ai-engineering-intern/);
   assert.match(html, /href="\/contact"/);
+  assert.match(html, /href="\/aimex"/);
+  assert.match(html, /href="\/applications"/);
+  assert.match(html, /href="\/about"/);
   assert.doesNotMatch(
     html,
     /\/images\/(?:aimex-system|aimex-concept|aimex-material-handling-concept)\.png/,
@@ -58,6 +62,53 @@ test("server-renders the AIMRO homepage", async () => {
     /50%|\$1\.36T|\$800B|customers? (?:are )?in (?:the )?pipeline|100% IP|Harvard|MIT/i,
   );
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+});
+
+test("server-renders the AIMEX technology story", async () => {
+  const response = await render("/aimex");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /<title>AIMEX Technology \| AIMRO<\/title>/i);
+  assert.match(html, /A robot should understand the task before it moves/);
+  assert.match(html, /From demonstration to verified execution/);
+  assert.match(html, /Explicit task intelligence/);
+  assert.match(html, /Learning from demonstrations/);
+  assert.match(html, /AIM Tower/);
+  assert.match(html, /View the system architecture/);
+  assert.doesNotMatch(html, /Current focus|Planned layer|execution today|over time/i);
+  assert.match(html, /aimex-demo-hardware\.jpg/);
+  assert.match(html, /perception-visualization\.jpg/);
+  assert.doesNotMatch(html, /\$1\.2M|80%|RaaS|patent|purchase agreement/i);
+});
+
+test("server-renders development and target application states", async () => {
+  const response = await render("/applications");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /<title>Manufacturing Applications \| AIMRO<\/title>/i);
+  assert.match(html, /Development focus/);
+  assert.match(html, /Assembly/);
+  assert.match(html, /Target application/);
+  assert.match(html, /Material handling/);
+  assert.match(html, /Visual inspection/);
+  assert.match(html, /manufacturing-workcell\.jpg/);
+  assert.match(html, /does not present these capabilities as a broadly deployed commercial product/);
+});
+
+test("server-renders the company and founder page", async () => {
+  const response = await render("/about");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /<title>About AIMRO \| AIMRO<\/title>/i);
+  assert.match(html, /Building a more adaptable way to automate manufacturing/);
+  assert.match(html, /Jeff Cui/);
+  assert.match(html, /Founder &amp; CEO/);
+  assert.match(html, /AIM Robots, Inc\./);
+  assert.match(html, /580 Herndon Pkwy/);
+  assert.match(html, /Herndon, VA 20170/);
 });
 
 test("server-renders the standalone contact page", async () => {

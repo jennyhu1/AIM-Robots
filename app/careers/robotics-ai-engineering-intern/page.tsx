@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default function RoboticsAiEngineeringInternPage() {
   return (
     <>
-      <SiteHeader interior />
+      <SiteHeader />
 
       <main className="job-page">
         <header className="job-hero">

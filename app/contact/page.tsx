@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <SiteHeader interior />
+      <SiteHeader />
 
       <main className="contact-page" id="contact">
         <section className="contact-page-hero" aria-labelledby="contact-title">
@@ -76,7 +76,7 @@ export default function ContactPage() {
               <span>{SITE.address.cityRegionPostal}</span>
               <span>{SITE.address.country}</span>
             </address>
-            <Link className="text-link" href="/#technology">
+            <Link className="text-link" href="/aimex">
               Explore AIMEX
               <span aria-hidden="true">↗</span>
             </Link>

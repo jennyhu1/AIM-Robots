@@ -1,13 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { NAV_ITEMS } from "../site-data";
 
-type SiteHeaderProps = {
-  interior?: boolean;
-};
-
-export function SiteHeader({ interior = false }: SiteHeaderProps) {
+export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -21,17 +18,15 @@ export function SiteHeader({ interior = false }: SiteHeaderProps) {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  const anchorPrefix = interior ? "/" : "";
-
   return (
     <header className="site-header">
-      <a
+      <Link
         className="wordmark"
-        href={interior ? "/#home" : "#home"}
+        href="/"
         aria-label="AIMRO home"
       >
         AIMRO
-      </a>
+      </Link>
 
       <button
         className="menu-button"
@@ -52,21 +47,18 @@ export function SiteHeader({ interior = false }: SiteHeaderProps) {
         aria-label="Primary navigation"
       >
         {NAV_ITEMS.map((item) => {
-          const href = item.href.startsWith("#")
-            ? `${anchorPrefix}${item.href}`
-            : item.href;
           const isContact = item.label === "Contact";
 
           return (
-            <a
+            <Link
               className={isContact ? "nav-contact" : undefined}
               key={item.label}
-              href={href}
+              href={item.href}
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
               {isContact ? <span aria-hidden="true">↗</span> : null}
-            </a>
+            </Link>
           );
         })}
       </nav>

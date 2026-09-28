@@ -1,79 +1,50 @@
-/* eslint-disable @next/next/no-img-element -- Source photos are already compressed and served directly. */
+/* eslint-disable @next/next/no-img-element -- Web-ready company images are served directly. */
+import Link from "next/link";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
 import { OPEN_ROLE, SITE } from "./site-data";
 
-const capabilities = [
-  {
-    number: "01",
-    title: "Learning from human demonstrations",
-    body: "AIMEX is designed to learn assembly work from examples performed by people, capturing practical know-how without programming every motion by hand.",
-  },
-  {
-    number: "02",
-    title: "Computer vision and perception",
-    body: "Cameras and vision models help the system interpret the work area, the objects involved, and what is happening during a task.",
-  },
-  {
-    number: "03",
-    title: "Simulation and synthetic data",
-    body: "Simulation creates controlled environments and additional training data before work moves to physical equipment.",
-  },
-  {
-    number: "04",
-    title: "Robot integration",
-    body: "The team connects perception and learned actions with cameras, grippers, and industrial robot arms in the lab.",
-  },
-];
-
-const manufacturingChallenges = [
-  {
-    title: "Skilled workers are difficult to replace",
-    body: "Critical production knowledge often lives with individual people and can be hard to reproduce across shifts or facilities.",
-  },
-  {
-    title: "Tasks keep changing",
-    body: "Products, parts, and processes change, while conventional automation is usually built around a fixed sequence.",
-  },
-  {
-    title: "Reprogramming adds friction",
-    body: "Adapting a traditional robot to new work can require specialized programming and additional integration effort.",
-  },
-];
-
-const productLayers = [
-  {
-    scope: "Workcell",
-    title: "AIMEX",
-    body: "The primary platform under development, focused on learning from human demonstrations and executing robot tasks within an individual workcell.",
-  },
-  {
-    scope: "Production line",
-    title: "AIM Tower",
-    body: "A planned line-level layer intended to coordinate robot work and production flow across multiple workcells.",
-  },
-  {
-    scope: "System architecture",
-    title: "AIM AIOS",
-    body: "The broader software architecture intended to connect workcell learning and execution with line-level coordination.",
-  },
-];
-
-const workflowSteps = [
+const learningPath = [
   {
     number: "01",
     title: "Demonstrate",
-    body: "A person performs the task while cameras capture the work area, objects, and motion.",
+    body: "A person shows the task in its real workcell context.",
   },
   {
     number: "02",
-    title: "Interpret",
-    body: "Perception and learning models organize the scene and the sequence of actions involved.",
+    title: "Understand",
+    body: "Vision and task intelligence organize what matters and what should happen next.",
   },
   {
     number: "03",
-    title: "Transfer",
-    body: "The task is tested in simulation and connected to a physical robot workcell.",
+    title: "Execute",
+    body: "AIMEX connects the learned task to guarded robot execution.",
+  },
+  {
+    number: "04",
+    title: "Verify",
+    body: "The system checks the result and can recheck, recover, or request help.",
+  },
+];
+
+const applications = [
+  {
+    number: "01",
+    status: "Development focus",
+    title: "Assembly",
+    body: "Teaching robot workcells to perform repeatable assembly tasks from human demonstrations.",
+  },
+  {
+    number: "02",
+    status: "Target application",
+    title: "Material handling",
+    body: "Applying reusable task knowledge to movement between production steps.",
+  },
+  {
+    number: "03",
+    status: "Target application",
+    title: "Visual inspection",
+    body: "Connecting perception and production evidence to support consistent inspection workflows.",
   },
 ];
 
@@ -86,20 +57,21 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow">AI-powered robotics for manufacturing</p>
-            <h1 id="hero-title">Teaching robots how assembly work gets done</h1>
+            <h1 id="hero-title">Teaching industrial robots to learn work from people</h1>
             <p className="hero-intro">
-              AIMRO is developing AIMEX to help industrial robots learn assembly
-              work from human demonstrations, making automation easier to adapt
-              without programming every step by hand.
+              AIMRO is developing AIMEX, a station-level system that turns human
+              demonstrations into structured, reusable robot tasks for
+              manufacturing.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#technology">
-                Explore Our Technology
-              </a>
-              <a className="button button-secondary" href="#about">
-                About AIMRO
-              </a>
+              <Link className="button button-primary" href="/aimex">
+                Discover AIMEX
+              </Link>
+              <Link className="button button-secondary" href="/applications">
+                Explore Applications
+              </Link>
             </div>
+            <p className="hero-location">Developed in Herndon, Virginia</p>
           </div>
 
           <figure className="hero-visual">
@@ -113,174 +85,184 @@ export default function Home() {
           </figure>
         </section>
 
-        <section className="section section-about" id="about">
-          <div className="section-label">
-            <span>01</span>
-            <p>About AIMRO</p>
-          </div>
-          <div className="about-content">
-            <h2>AI-powered robotics for adaptable manufacturing</h2>
-            <div className="about-copy">
+        <section className="home-section home-about" id="about">
+          <header className="section-heading section-heading-wide">
+            <p className="eyebrow">About AIMRO</p>
+            <h2>Manufacturing knowledge is difficult to scale.</h2>
+          </header>
+
+          <div className="about-editorial">
+            <p className="about-lead">
+              Critical production know-how often lives with individual workers.
+              It takes time to transfer, and it can disappear when experienced
+              people leave.
+            </p>
+            <div className="about-body">
               <p>
-                AIMRO develops AI-driven robot technology for manufacturers. Its
-                core product, AIMEX, is being built to teach industrial robots
-                assembly tasks from human demonstrations.
+                Traditional automation performs fixed processes well, but new
+                products and changing tasks can bring another cycle of
+                programming and integration. AIMRO is working on a more adaptable
+                path: turn demonstrated work into task intelligence a robot can
+                use, check, and apply again.
               </p>
-              <p>
-                The team brings together computer vision, simulation, and robot
-                integration to translate practical human know-how into robot
-                actions. AIMRO operates a lab in Herndon, Virginia.
-              </p>
+              <Link className="text-link" href="/about">
+                About AIMRO <span aria-hidden="true">↗</span>
+              </Link>
             </div>
           </div>
 
-          <div className="manufacturing-context">
-            <div>
-              <p className="eyebrow">The manufacturing challenge</p>
-              <h3>Why more adaptable automation matters</h3>
-            </div>
-            <div className="manufacturing-problems">
-              {manufacturingChallenges.map((challenge, index) => (
-                <article className="manufacturing-problem" key={challenge.title}>
-                  <span className="challenge-index">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h4>{challenge.title}</h4>
-                    <p>{challenge.body}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
+          <div className="company-principle" aria-label="AIMRO company approach">
+            <p>Human process knowledge</p>
+            <span aria-hidden="true">→</span>
+            <p>Reusable task intelligence</p>
+            <span aria-hidden="true">→</span>
+            <p>Adaptable robot work</p>
           </div>
         </section>
 
-        <section className="section section-technology" id="technology">
-          <div className="section-label">
-            <span>02</span>
-            <p>Technology</p>
-          </div>
-
-          <div className="technology-intro">
+        <section className="home-section home-technology" id="technology">
+          <header className="section-heading section-heading-split">
             <div>
               <p className="eyebrow">Meet AIMEX</p>
-              <h2>A practical learning and execution stack for industrial robots</h2>
+              <h2>From a human demonstration to verified robot action</h2>
             </div>
             <p>
-              AIMEX connects perception, simulation, demonstration data, and
-              physical robots in one development loop. The focus is helping
-              workcells learn assembly tasks and adapt as manufacturing needs
-              change.
+              AIMEX brings together perception, explicit task knowledge, and
+              robot integration. The goal is to help a workcell learn what the
+              task means—not only replay a sequence of motions.
             </p>
-          </div>
+          </header>
 
-          <div className="technology-layout">
-            <figure className="system-visual">
+          <div className="technology-stage">
+            <figure className="demo-visual">
               <img
-                src="/images/manufacturing-workcell.jpg"
-                alt="Industrial robot arm operating in a manufacturing workcell"
-                width="1400"
-                height="933"
+                src="/images/aimex-demo-hardware.jpg"
+                alt="Close-up of circuit boards inside the AIMRO demonstration system"
+                width="852"
+                height="473"
+                loading="lazy"
               />
               <figcaption>
-                <span>Robot integration context</span>
-                <strong>Industrial workcell</strong>
+                <span>Real demonstration hardware</span>
+                <strong>AIMRO development system</strong>
               </figcaption>
             </figure>
 
-            <div className="capability-list">
-              {capabilities.map((capability) => (
-                <article className="capability" key={capability.number}>
-                  <span>{capability.number}</span>
-                  <div>
-                    <h3>{capability.title}</h3>
-                    <p>{capability.body}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          <div className="aimex-workflow" id="aimex-workflow">
-            <div className="workflow-intro">
-              <div>
-                <p className="eyebrow">How the pieces connect</p>
-                <h3>From demonstration to robot action</h3>
-              </div>
-              <p>
-                AIMEX brings observation, perception, simulation, and robot
-                integration into a practical development workflow for
-                manufacturing tasks.
-              </p>
-            </div>
-
-            <ol className="workflow-steps">
-              {workflowSteps.map((step) => (
-                <li className="workflow-step" key={step.number}>
+            <ol className="learning-path">
+              {learningPath.map((step) => (
+                <li key={step.number}>
                   <span>{step.number}</span>
-                  <h4>{step.title}</h4>
-                  <p>{step.body}</p>
+                  <div>
+                    <h3>{step.title}</h3>
+                    <p>{step.body}</p>
+                  </div>
                 </li>
               ))}
             </ol>
-
-            <div className="workflow-media workflow-media-single">
-              <figure>
-                <img
-                  src="/images/perception-visualization.jpg"
-                  alt="Color-coded machine vision view of industrial equipment"
-                  width="1000"
-                  height="566"
-                  loading="lazy"
-                />
-                <figcaption>Example of visual perception data</figcaption>
-              </figure>
-            </div>
           </div>
 
-          <div className="product-system">
-            <div className="product-system-intro">
-              <div>
-                <p className="eyebrow">Product direction</p>
-                <h3>From one workcell to the production line</h3>
-              </div>
+          <div className="architecture-block" id="technology-system">
+            <div className="architecture-intro">
+              <p className="eyebrow">AIM AI Operating System</p>
+              <h3>One intelligence core across two operating tiers</h3>
               <p>
-                AIMEX is the current development focus. AIM Tower and the broader
-                AIM AI Operating System (AIOS) describe how the technology could
-                extend from individual robot workcells to line-level coordination.
+                AIM Tower coordinates production-line activity while AIMEX
+                connects task intelligence with equipment at the workcell level.
+                The diagram below follows the architecture shown in AIMRO&apos;s
+                product materials.
               </p>
+              <Link className="text-link" href="/aimex">
+                Explore AIMEX in detail <span aria-hidden="true">↗</span>
+              </Link>
             </div>
 
-            <div className="product-layer-list">
-              {productLayers.map((layer, index) => (
-                <article className="product-layer" key={layer.title}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <div>
-                    <p>{layer.scope}</p>
-                    <h3>{layer.title}</h3>
-                    <p className="product-layer-body">{layer.body}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <div className="application-direction">
-              <p className="eyebrow">Application direction</p>
-              <p>
-                Assembly is the current development focus. Material handling and
-                vision-based inspection are target applications as the platform
-                develops.
-              </p>
-            </div>
+            <figure className="architecture-slide">
+              <a
+                className="architecture-slide-viewport"
+                href="/images/aim-aios-architecture.png"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open the AIM AI Operating System architecture diagram at full size"
+              >
+                <img
+                  src="/images/aim-aios-architecture.png"
+                  alt="AIM AI Operating System architecture showing AIM Tower above AIMEX, connected by execution, status, and feedback flows, with supported robotic equipment below"
+                  width="1600"
+                  height="900"
+                  loading="lazy"
+                />
+              </a>
+              <figcaption>
+                Architecture overview from AIMRO company materials.
+                <span> On smaller screens, swipe horizontally to read the full diagram.</span>
+              </figcaption>
+            </figure>
           </div>
         </section>
 
-        <section className="section section-leadership" id="leadership">
-          <div className="section-label">
-            <span>03</span>
-            <p>Leadership</p>
-          </div>
+        <section className="home-section home-applications" id="applications">
+          <header className="section-heading section-heading-split">
+            <div>
+              <p className="eyebrow">Manufacturing applications</p>
+              <h2>Built around real work on the production floor</h2>
+            </div>
+            <p>
+              AIMRO is starting with assembly. As the platform develops, the
+              same learning and execution approach is intended to support
+              adjacent manufacturing work.
+            </p>
+          </header>
 
+          <div className="application-showcase">
+            <figure className="application-collage">
+              <img
+                className="application-collage-main"
+                src="/images/application-robot-arm.jpg"
+                alt="Concept illustration of a robotic arm for manufacturing tasks"
+                width="1254"
+                height="1254"
+                loading="lazy"
+              />
+              <div className="application-collage-stack">
+                <img
+                  src="/images/application-material-handling.jpg"
+                  alt="Concept illustration of a mobile robot for material movement"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/application-operator-console.jpg"
+                  alt="Concept illustration of a manufacturing monitoring console"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>Illustrative equipment and operating contexts</figcaption>
+            </figure>
+
+            <ol className="application-list">
+              {applications.map((application) => (
+                <li key={application.title}>
+                  <span>{application.number}</span>
+                  <div>
+                    <p>{application.status}</p>
+                    <h3>{application.title}</h3>
+                    <p>{application.body}</p>
+                  </div>
+                </li>
+              ))}
+              <li className="application-list-link">
+                <Link className="text-link" href="/applications">
+                  Explore application areas <span aria-hidden="true">↗</span>
+                </Link>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section className="home-section home-leadership" id="leadership">
           <div className="leadership-layout">
             <figure className="founder-photo">
               <img
@@ -288,51 +270,48 @@ export default function Home() {
                 alt="Jeff Cui, Founder and CEO of AIMRO"
                 width="398"
                 height="498"
+                loading="lazy"
               />
             </figure>
 
             <div className="founder-copy">
-              <p className="eyebrow">Meet Our Founder</p>
+              <p className="eyebrow">Leadership</p>
               <h2>Jeff Cui</h2>
               <p className="founder-role">Founder &amp; CEO</p>
               <p>
                 Jeff Cui is the Founder and CEO of AIM Robots, Inc. He is a
-                manufacturing and robotics automation entrepreneur with a track
-                record of reshoring factories to the United States. He holds
-                BS/MS degrees from Tsinghua University and the University of
-                Maryland.
+                manufacturing and robotics automation entrepreneur focused on
+                factory reshoring and industrial automation.
               </p>
-              <a
-                className="text-link"
-                href={SITE.linkedIn}
-                target="_blank"
-                rel="noreferrer"
-              >
-                View LinkedIn
-                <span aria-hidden="true">↗</span>
-              </a>
+              <div className="founder-links">
+                <Link className="text-link" href="/about">
+                  Company &amp; leadership <span aria-hidden="true">↗</span>
+                </Link>
+                <a
+                  className="text-link"
+                  href={SITE.linkedIn}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View LinkedIn <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="section section-careers" id="careers">
-          <div className="section-label">
-            <span>04</span>
-            <p>Careers</p>
-          </div>
-
-          <div className="careers-intro">
+        <section className="home-section home-careers" id="careers">
+          <header className="section-heading section-heading-split careers-heading">
             <div>
-              <p className="eyebrow">Work with us</p>
+              <p className="eyebrow">Careers</p>
               <h2>Build across software and hardware</h2>
             </div>
             <p>
               AIMRO is a small team working on real robotics systems. The work
               moves between vision models, simulation, cameras, robot arms, and
-              the practical details that make hardware function. That range
-              creates room to learn, contribute, and grow.
+              the practical details that make hardware function.
             </p>
-          </div>
+          </header>
 
           <article className="position">
             <div className="position-status">
@@ -346,9 +325,9 @@ export default function Home() {
                 <p>{OPEN_ROLE.subtitle}</p>
               </div>
               {OPEN_ROLE.open ? (
-                <a className="button button-secondary" href={OPEN_ROLE.href}>
+                <Link className="button button-secondary" href={OPEN_ROLE.href}>
                   View Position
-                </a>
+                </Link>
               ) : (
                 <span className="closed-label">Position Closed</span>
               )}
@@ -363,26 +342,16 @@ export default function Home() {
           </article>
         </section>
 
-        <section className="section section-contact" id="contact">
-          <div className="section-label">
-            <span>05</span>
-            <p>Contact</p>
-          </div>
-
-          <div className="contact-layout">
-            <div className="contact-callout">
-              <p className="eyebrow">Start a conversation</p>
-              <h2>Let&apos;s talk about adaptable robotics.</h2>
-              <p>
-                For company, technology, and collaboration inquiries, contact
-                AIMRO directly.
-              </p>
-              <a className="button button-primary" href="/contact">
-                Contact AIMRO
-                <span aria-hidden="true">→</span>
-              </a>
+        <section className="home-section home-contact" id="contact">
+          <div className="contact-rail">
+            <div>
+              <p className="eyebrow">Contact AIMRO</p>
+              <h2>Start a conversation about adaptable robotics.</h2>
+              <Link className="button button-primary" href="/contact">
+                Contact AIMRO <span aria-hidden="true">→</span>
+              </Link>
             </div>
-            <div className="contact-details">
+            <div className="contact-rail-details">
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
               <address>
                 <span>{SITE.address.street}</span>

@@ -14,11 +14,11 @@ export const SITE = {
 } as const;
 
 export const NAV_ITEMS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Technology", href: "#technology" },
-  { label: "Leadership", href: "#leadership" },
-  { label: "Careers", href: "#careers" },
+  { label: "Home", href: "/" },
+  { label: "AIMEX", href: "/aimex" },
+  { label: "Applications", href: "/applications" },
+  { label: "About", href: "/about" },
+  { label: "Careers", href: "/#careers" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
