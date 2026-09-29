@@ -262,44 +262,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="home-section home-leadership" id="leadership">
-          <div className="leadership-layout">
-            <figure className="founder-photo">
-              <img
-                src="/images/jeff-cui.jpg"
-                alt="Jeff Cui, Founder and CEO of AIMRO"
-                width="398"
-                height="498"
-                loading="lazy"
-              />
-            </figure>
-
-            <div className="founder-copy">
-              <p className="eyebrow">Leadership</p>
-              <h2>Jeff Cui</h2>
-              <p className="founder-role">Founder &amp; CEO</p>
-              <p>
-                Jeff Cui is the Founder and CEO of AIM Robots, Inc. He is a
-                manufacturing and robotics automation entrepreneur focused on
-                factory reshoring and industrial automation.
-              </p>
-              <div className="founder-links">
-                <Link className="text-link" href="/about">
-                  Company &amp; leadership <span aria-hidden="true">↗</span>
-                </Link>
-                <a
-                  className="text-link"
-                  href={SITE.linkedIn}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  View LinkedIn <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="home-section home-contact" id="contact">
           <div className="contact-rail">
             <div>

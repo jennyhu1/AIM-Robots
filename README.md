@@ -4,7 +4,7 @@ A concise, English-language company and recruiting site for AIMRO and its AIMEX 
 
 ## Pages
 
-- `/` — company homepage with a concise company, technology, applications, leadership, and contact story
+- `/` — company homepage with a concise company, technology, applications, and contact story
 - `/aimex` — AIMEX learning, execution, perception, and system-building blocks
 - `/applications` — assembly development focus and target directions in material handling and visual inspection
 - `/about` — company approach, founder, and Herndon lab
@@ -88,7 +88,7 @@ When closed, the careers page shows `Position Closed`, and the job page hides th
 
 Edit these files:
 
-- `app/page.tsx` — homepage overview, technology preview, applications preview, leadership, and contact
+- `app/page.tsx` — homepage overview, technology preview, applications preview, and contact
 - `app/careers/page.tsx` — careers overview and current open position
 - `app/aimex/page.tsx` — detailed AIMEX and AIM AIOS explanation
 - `app/applications/page.tsx` — application status and manufacturing-task fit
