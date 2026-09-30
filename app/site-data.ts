@@ -10,7 +10,6 @@ export const SITE = {
     cityRegionPostal: "Herndon, VA 20170",
     country: "United States",
   },
-  linkedIn: "https://www.linkedin.com/in/jeff-cui-928266233/",
 } as const;
 
 export const NAV_ITEMS = [

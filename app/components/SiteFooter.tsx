@@ -1,4 +1,4 @@
-import { NAV_ITEMS, SITE } from "../site-data";
+import { SITE } from "../site-data";
 import { SiteLink as Link } from "./SiteLink";
 
 export function SiteFooter() {
@@ -6,21 +6,15 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-inner">
         <div>
-          <Link className="wordmark footer-wordmark" href="/#home">
+          <Link className="wordmark footer-wordmark" href="/">
             {SITE.brandName}
           </Link>
           <p>{SITE.legalName}</p>
         </div>
 
         <nav className="footer-nav" aria-label="Footer navigation">
-          {NAV_ITEMS.map((item) => {
-            const href = item.href.startsWith("#") ? `/${item.href}` : item.href;
-            return (
-              <Link key={item.label} href={href}>
-                {item.label}
-              </Link>
-            );
-          })}
+          <Link href="/careers">Careers</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
 
         <div className="footer-contact">

@@ -44,10 +44,7 @@ export default function CareersPage() {
               task intelligence, and hands-on robot integration.
             </p>
             <div className="careers-hero-actions">
-              <a className="button button-primary" href="#open-roles">
-                View Open Position
-              </a>
-              <Link className="button button-secondary" href="/contact">
+              <Link className="button button-primary" href="/contact">
                 Contact AIMRO
               </Link>
             </div>
@@ -90,7 +87,7 @@ export default function CareersPage() {
           </ol>
         </section>
 
-        <section className="careers-openings" id="open-roles" aria-labelledby="open-roles-title">
+        <section className="careers-openings" aria-labelledby="open-roles-title">
           <header className="careers-openings-heading">
             <div>
               <p className="eyebrow">Open roles</p>

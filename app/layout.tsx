@@ -4,7 +4,7 @@ import "./globals.css";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const title = "AIMRO | Industrial Robotics AI";
 const description =
-  "AIMRO develops AIMEX, an AI platform that helps industrial robots learn assembly tasks from human demonstrations.";
+  "AIMRO is building AIM AIOS and AIMEX to turn manufacturing demonstrations and production evidence into explicit, reusable robotic work.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

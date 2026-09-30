@@ -18,9 +18,9 @@ const applicationAreas = [
     image: "/images/manufacturing-workcell.jpg",
     alt: "Industrial robot arm operating in a manufacturing workcell",
     body: [
-      "Assembly is AIMRO's current starting point: controlled tasks in which a person can demonstrate the work, the system can interpret the task state, and the robot can execute and verify a repeatable sequence.",
-      "This work brings together learning from demonstration, computer vision, simulation, and integration with physical robot cells.",
-      "AIMEX remains under development; this site does not present these capabilities as a broadly deployed commercial product.",
+      "Assembly is AIMRO's current starting point: controlled tasks in which a person can demonstrate the work and explain the intended result.",
+      "A useful evaluation must define the parts, sequence, tooling, variation, and evidence that confirms completion. AIMEX connects that task knowledge with vision, simulation, and physical workcell integration.",
+      "The proof-of-concept system demonstrates the core learning and execution path. Factory deployment, repeatability across representative tasks, and production reliability remain productization work.",
     ],
     caption: "Industrial robot workcell context",
   },
@@ -31,7 +31,8 @@ const applicationAreas = [
     image: "/images/application-material-handling.jpg",
     alt: "Concept illustration of a mobile robot for moving material in a factory",
     body: [
-      "Reusable task knowledge could support movement of parts and materials between production steps, with perception of the work area and explicit checks around each action.",
+      "Material movement could use the same explicit description of the item, pickup condition, destination, and delivery result. The intended architecture gives each mobile AIMEX its own execution capability while exchanging assignments and status with factory-level coordination.",
+      "This remains a planned application direction. Hardware integration, operating constraints, and task performance require separate validation before it can be presented as a deployed offering.",
     ],
     caption: "Illustrative material-handling context",
   },
@@ -42,7 +43,8 @@ const applicationAreas = [
     image: "/images/application-operator-console.jpg",
     alt: "Concept illustration of an operator monitoring manufacturing vision systems",
     body: [
-      "Camera-based perception can be connected with task context and production evidence to support more consistent inspection workflows.",
+      "Visual or equipment evidence could confirm a defined result before the next production step. The task must specify what is being checked, which evidence is authoritative, and what happens when the result remains uncertain.",
+      "AIMRO's current demonstration includes result checks within its task flow. A broader production inspection product remains a planned direction and requires application-specific proof.",
     ],
     caption: "Illustrative monitoring and inspection context",
   },
@@ -74,18 +76,11 @@ export default function ApplicationsPage() {
             <p className="eyebrow">Manufacturing applications</p>
             <h1 id="applications-title">Learning practical manufacturing work</h1>
             <p>
-              AIMRO is starting with assembly and developing a path toward
-              adjacent tasks where human know-how, perception, and reliable
-              robot execution need to work together.
+              AIMRO is starting with controlled assembly and part-placement
+              work. Additional applications describe where the architecture
+              could extend after their hardware, task skills, and operating
+              performance are validated.
             </p>
-            <div className="hero-actions">
-              <a className="button button-primary" href="#application-areas">
-                View Application Areas
-              </a>
-              <Link className="button button-secondary" href="/aimex">
-                Explore AIMEX
-              </Link>
-            </div>
           </div>
 
           <figure className="application-hero-media">
@@ -99,7 +94,7 @@ export default function ApplicationsPage() {
           </figure>
         </section>
 
-        <section className="application-stories" id="application-areas" aria-label="Application areas">
+        <section className="application-stories" aria-label="Application areas">
           {applicationAreas.map((area) => (
             <article className="application-story" key={area.title}>
               <figure>
@@ -151,9 +146,6 @@ export default function ApplicationsPage() {
           <div className="page-cta-actions">
             <Link className="button button-primary" href="/contact">
               Contact AIMRO
-            </Link>
-            <Link className="button button-secondary" href="/aimex">
-              How AIMEX Works
             </Link>
           </div>
         </section>

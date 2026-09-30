@@ -30,17 +30,17 @@ test("server-renders the AIMRO homepage", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>AIMRO \| Industrial Robotics AI<\/title>/i);
-  assert.match(html, /Teaching industrial robots to learn work from people/);
-  assert.match(html, /Manufacturing knowledge is difficult to scale/);
-  assert.match(html, /From a human demonstration to verified robot action/);
+  assert.match(html, /Turn manufacturing know-how into reusable robotic work/);
+  assert.match(html, /Factories repeat too much training and engineering/);
+  assert.match(html, /A manufacturing skill includes more than motion/);
   assert.match(html, /aimex-demo-hardware\.jpg/);
-  assert.match(html, /Meet AIMEX/);
+  assert.match(html, /Local intelligence at the workcell/);
   assert.match(html, /AIM Tower/);
   assert.match(html, /AIM AI Operating System/);
-  assert.match(html, /aim-aios-architecture\.png/);
-  assert.match(html, /connected by execution, status, and feedback flows/);
+  assert.doesNotMatch(html, /aim-aios-architecture\.png/);
+  assert.match(html, /does not place one central brain above passive machines/);
   assert.match(html, /Material handling/);
-  assert.match(html, /Visual inspection/);
+  assert.match(html, /Inspection within a workflow/);
   assert.doesNotMatch(html, /id="leadership"/);
   assert.match(html, /jenny\.hu@aimrobots\.ai/);
   assert.match(html, /580 Herndon Pkwy/);
@@ -48,9 +48,8 @@ test("server-renders the AIMRO homepage", async () => {
   assert.match(html, /\/images\/aimex-hero\.jpg/);
   assert.match(html, /href="\/careers"/);
   assert.match(html, /href="\/contact"/);
-  assert.match(html, /href="\/aimex"/);
-  assert.match(html, /href="\/applications"/);
-  assert.match(html, /href="\/about"/);
+  assert.doesNotMatch(html, /Developed in Herndon, Virginia/);
+  assert.doesNotMatch(html, /Discover AIMEX|Explore Applications|About AIMRO\s*<span/i);
   assert.doesNotMatch(
     html,
     /\/images\/(?:aimex-system|aimex-concept|aimex-material-handling-concept)\.png/,
@@ -70,13 +69,17 @@ test("server-renders the AIMEX technology story", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>AIMEX Technology \| AIMRO<\/title>/i);
-  assert.match(html, /A robot should understand the task before it moves/);
-  assert.match(html, /From demonstration to verified execution/);
+  assert.match(html, /A trainable robotic worker for manufacturing workcells/);
+  assert.match(html, /From observed work to a result the system can check/);
   assert.match(html, /Explicit task intelligence/);
+  assert.match(html, /Multimodal Understanding and Abstraction/);
+  assert.match(html, /Universal Explicit Representation/);
   assert.match(html, /Learning from demonstrations/);
   assert.match(html, /AIM Tower/);
-  assert.match(html, /View the system architecture/);
-  assert.doesNotMatch(html, /Current focus|Planned layer|execution today|over time/i);
+  assert.match(html, /aim-aios-architecture\.png/);
+  assert.match(html, /current productization focus/i);
+  assert.match(html, /broader development direction/i);
+  assert.match(html, /Reuse does not mean zero commissioning/);
   assert.match(html, /aimex-demo-hardware\.jpg/);
   assert.match(html, /perception-visualization\.jpg/);
   assert.doesNotMatch(html, /\$1\.2M|80%|RaaS|patent|purchase agreement/i);
@@ -94,26 +97,22 @@ test("server-renders development and target application states", async () => {
   assert.match(html, /Material handling/);
   assert.match(html, /Visual inspection/);
   assert.match(html, /manufacturing-workcell\.jpg/);
-  assert.match(html, /does not present these capabilities as a broadly deployed commercial product/);
+  assert.match(html, /Factory deployment, repeatability across representative tasks/);
 });
 
-test("server-renders the company and leadership page", async () => {
+test("server-renders the company mission without personal profiles", async () => {
   const response = await render("/about");
   assert.equal(response.status, 200);
 
   const html = await response.text();
   assert.match(html, /<title>About AIMRO \| AIMRO<\/title>/i);
-  assert.match(html, /Building a more adaptable way to automate manufacturing/);
-  assert.match(html, /Jeff Cui/);
-  assert.match(html, /Founder &amp; CEO/);
-  assert.match(html, /William Noe/);
-  assert.match(html, /Jake Cui/);
-  assert.match(html, /Dr\. Li Zheng/);
-  assert.match(html, /Dr\. Yifan Li/);
-  assert.match(html, /william-noe\.jpg/);
-  assert.match(html, /jake-cui\.jpg/);
-  assert.match(html, /li-zheng\.jpg/);
-  assert.match(html, /yifan-li\.jpg/);
+  assert.match(html, /Building reusable intelligence for manufacturing/);
+  assert.match(html, /Manufacturing knowledge does not scale easily/);
+  assert.match(html, /Live proof of concept/);
+  assert.match(html, /Factory-deployable AIMEX/);
+  assert.match(html, /Coordinated robotic factories/);
+  assert.doesNotMatch(html, /Jeff Cui|William Noe|Jake Cui|Dr\. Li Zheng|Dr\. Yifan Li/);
+  assert.doesNotMatch(html, /Leadership|Founder|Advisors|jeff-cui\.jpg|william-noe\.jpg/i);
   assert.match(html, /AIM Robots, Inc\./);
   assert.match(html, /580 Herndon Pkwy/);
   assert.match(html, /Herndon, VA 20170/);
@@ -208,4 +207,23 @@ test("uses full document navigation for deployed internal links", async () => {
 
   assert.doesNotMatch(files.join("\n"), /from ["']next\/link["']/);
   assert.match(files.at(-1) ?? "", /<a href=\{href\}/);
+});
+
+test("removes in-page and cross-page anchor navigation", async () => {
+  const files = await Promise.all(
+    [
+      "../app/page.tsx",
+      "../app/aimex/page.tsx",
+      "../app/applications/page.tsx",
+      "../app/about/page.tsx",
+      "../app/careers/page.tsx",
+      "../app/contact/page.tsx",
+      "../app/components/SiteFooter.tsx",
+    ].map((path) => readFile(new URL(path, import.meta.url), "utf8")),
+  );
+
+  const source = files.join("\n");
+  assert.doesNotMatch(source, /href\s*=\s*["'`]#[^"'`]*/);
+  assert.doesNotMatch(source, /href\s*=\s*["'`]\/[^"'`]*#[^"'`]*/);
+  assert.doesNotMatch(source, /scrollIntoView|location\.hash/);
 });

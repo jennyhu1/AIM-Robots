@@ -7,44 +7,44 @@ import { SITE } from "./site-data";
 const learningPath = [
   {
     number: "01",
-    title: "Demonstrate",
-    body: "A person shows the task in its real workcell context.",
+    title: "Observe the work",
+    body: "A person demonstrates the task while cameras and equipment signals capture the relevant workcell context.",
   },
   {
     number: "02",
-    title: "Understand",
-    body: "Vision and task intelligence organize what matters and what should happen next.",
+    title: "Understand the task",
+    body: "The system identifies the objects, required result, operating conditions, and evidence needed to proceed.",
   },
   {
     number: "03",
-    title: "Execute",
-    body: "AIMEX connects the learned task to guarded robot execution.",
+    title: "Execute and verify",
+    body: "AIMEX connects the task to guarded robot execution and checks whether the intended physical result occurred.",
   },
   {
     number: "04",
-    title: "Verify",
-    body: "The system checks the result and can recheck, recover, or request help.",
+    title: "Reuse with validation",
+    body: "Qualified task knowledge can be adapted to a similar workcell, then configured and tested for that station.",
   },
 ];
 
 const applications = [
   {
     number: "01",
-    status: "Development focus",
-    title: "Assembly",
-    body: "Teaching robot workcells to perform repeatable assembly tasks from human demonstrations.",
+    status: "Current development focus",
+    title: "Assembly and part placement",
+    body: "Controlled workcell tasks with defined parts, sequences, and completion conditions provide the starting point for AIMEX.",
   },
   {
     number: "02",
-    status: "Target application",
+    status: "Planned application direction",
     title: "Material handling",
-    body: "Applying reusable task knowledge to movement between production steps.",
+    body: "The same task-centered approach could support movement between production steps after the hardware and workflow are validated.",
   },
   {
     number: "03",
-    status: "Target application",
-    title: "Visual inspection",
-    body: "Connecting perception and production evidence to support consistent inspection workflows.",
+    status: "Planned application direction",
+    title: "Inspection within a workflow",
+    body: "Visual and equipment evidence could help confirm a defined result before production moves to the next step.",
   },
 ];
 
@@ -53,25 +53,22 @@ export default function Home() {
     <>
       <SiteHeader />
 
-      <main id="home">
+      <main>
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="eyebrow">AI-powered robotics for manufacturing</p>
-            <h1 id="hero-title">Teaching industrial robots to learn work from people</h1>
+            <p className="eyebrow">AIM AIOS / Industrial AI for manufacturing</p>
+            <h1 id="hero-title">Turn manufacturing know-how into reusable robotic work</h1>
             <p className="hero-intro">
-              AIMRO is developing AIMEX, a station-level system that turns human
-              demonstrations into structured, reusable robot tasks for
-              manufacturing.
+              AIMRO is building an AI operating system for physical labor. AIMEX
+              is the station-level product direction: a trainable robotic worker
+              that turns human demonstrations and production evidence into
+              structured tasks a robot can execute and verify.
             </p>
             <div className="hero-actions">
-              <Link className="button button-primary" href="/aimex">
-                Discover AIMEX
-              </Link>
-              <Link className="button button-secondary" href="/applications">
-                Explore Applications
+              <Link className="button button-primary" href="/contact">
+                Discuss a Manufacturing Task
               </Link>
             </div>
-            <p className="hero-location">Developed in Herndon, Virginia</p>
           </div>
 
           <figure className="hero-visual">
@@ -81,55 +78,59 @@ export default function Home() {
               width="1448"
               height="1086"
             />
-            <figcaption>AIMEX industrial robotics system</figcaption>
+            <figcaption>AIMEX industrial robotics development system</figcaption>
           </figure>
         </section>
 
-        <section className="home-section home-about" id="about">
+        <section className="home-section home-about">
           <header className="section-heading section-heading-wide">
-            <p className="eyebrow">About AIMRO</p>
-            <h2>Manufacturing knowledge is difficult to scale.</h2>
+            <p className="eyebrow">The manufacturing problem</p>
+            <h2>Factories repeat too much training and engineering</h2>
           </header>
 
           <div className="about-editorial">
             <p className="about-lead">
-              Critical production know-how often lives with individual workers.
-              It takes time to transfer, and it can disappear when experienced
-              people leave.
+              Valuable production knowledge often remains with experienced
+              people or inside one custom automation project.
             </p>
             <div className="about-body">
               <p>
-                Traditional automation performs fixed processes well, but new
-                products and changing tasks can bring another cycle of
-                programming and integration. AIMRO is working on a more adaptable
-                path: turn demonstrated work into task intelligence a robot can
-                use, check, and apply again.
+                A new worker, product, or workcell can require another cycle of
+                instruction, programming, and integration. Traditional
+                automation performs fixed processes well, but adapting it to a
+                changed task can be costly and slow.
               </p>
-              <Link className="text-link" href="/about">
-                About AIMRO <span aria-hidden="true">↗</span>
-              </Link>
+              <p>
+                AIMRO is developing a way to capture what the work requires,
+                connect that knowledge to robot execution, and retain qualified
+                skills for later use. The goal is to make manufacturing
+                expertise easier to inspect, validate, and apply again.
+              </p>
             </div>
           </div>
 
-          <div className="company-principle" aria-label="AIMRO company approach">
+          <div className="company-principle" aria-label="AIMRO development approach">
             <p>Human process knowledge</p>
             <span aria-hidden="true">→</span>
-            <p>Reusable task intelligence</p>
+            <p>Explicit task intelligence</p>
             <span aria-hidden="true">→</span>
-            <p>Adaptable robot work</p>
+            <p>Local AIMEX execution</p>
+            <span aria-hidden="true">→</span>
+            <p>Qualified skill reuse</p>
           </div>
         </section>
 
-        <section className="home-section home-technology" id="technology">
+        <section className="home-section home-technology">
           <header className="section-heading section-heading-split">
             <div>
-              <p className="eyebrow">Meet AIMEX</p>
-              <h2>From a human demonstration to verified robot action</h2>
+              <p className="eyebrow">From demonstration to execution</p>
+              <h2>A manufacturing skill includes more than motion</h2>
             </div>
             <p>
-              AIMEX brings together perception, explicit task knowledge, and
-              robot integration. The goal is to help a workcell learn what the
-              task means—not only replay a sequence of motions.
+              AIMRO&apos;s proof-of-concept system connects a human demonstration
+              to explicit task understanding, robot execution, and result
+              verification. Productizing that bridge for factory deployment is
+              the current development work.
             </p>
           </header>
 
@@ -143,7 +144,7 @@ export default function Home() {
                 loading="lazy"
               />
               <figcaption>
-                <span>Real demonstration hardware</span>
+                <span>Proof-of-concept hardware</span>
                 <strong>AIMRO development system</strong>
               </figcaption>
             </figure>
@@ -160,56 +161,70 @@ export default function Home() {
               ))}
             </ol>
           </div>
+        </section>
 
-          <div className="architecture-block" id="technology-system">
-            <div className="architecture-intro">
-              <p className="eyebrow">AIM AI Operating System</p>
-              <h3>One intelligence core across two operating tiers</h3>
+        <section className="home-section home-platform" aria-labelledby="platform-title">
+          <header className="section-heading section-heading-wide">
+            <p className="eyebrow">AIM AI Operating System</p>
+            <h2 id="platform-title">Local intelligence at the workcell, coordination at the factory level</h2>
+          </header>
+
+          <div className="platform-intro">
+            <p>
+              AIOS is AIMRO&apos;s broader manufacturing intelligence architecture.
+              It is intended to preserve task knowledge, connect it to physical
+              execution, and support coordination as more robotic roles are
+              validated.
+            </p>
+            <p>
+              The architecture does not place one central brain above passive
+              machines. Each AIMEX combines its own task intelligence,
+              workcell integration, and execution capability. AIM Tower is
+              being developed as the layer that coordinates assignments,
+              production status, material flow, and exceptions across those
+              locally capable systems.
+            </p>
+          </div>
+
+          <div className="platform-tiers">
+            <article className="platform-tier platform-tier-primary">
+              <p>Current productization focus</p>
+              <h3>AIMEX</h3>
+              <strong>Workcell execution</strong>
               <p>
-                AIM Tower coordinates production-line activity while AIMEX
-                connects task intelligence with equipment at the workcell level.
-                The diagram below follows the architecture shown in AIMRO&apos;s
-                product materials.
+                Learns or receives a task, connects it to station-specific
+                sensing and hardware, performs the work, and reports verified
+                status and results.
               </p>
-              <Link className="text-link" href="/aimex">
-                Explore AIMEX in detail <span aria-hidden="true">↗</span>
-              </Link>
+            </article>
+            <div className="platform-exchange" aria-label="Information exchanged between AIMEX and AIM Tower">
+              <span>Task assignment</span>
+              <b aria-hidden="true">↕</b>
+              <span>Status and results</span>
             </div>
-
-            <figure className="architecture-slide">
-              <a
-                className="architecture-slide-viewport"
-                href="/images/aim-aios-architecture.png"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Open the AIM AI Operating System architecture diagram at full size"
-              >
-                <img
-                  src="/images/aim-aios-architecture.png"
-                  alt="AIM AI Operating System architecture showing AIM Tower above AIMEX, connected by execution, status, and feedback flows, with supported robotic equipment below"
-                  width="2048"
-                  height="1154"
-                  loading="lazy"
-                />
-              </a>
-              <figcaption>
-                Architecture overview from AIMRO company materials.
-                <span> On smaller screens, swipe horizontally to read the full diagram.</span>
-              </figcaption>
-            </figure>
+            <article className="platform-tier">
+              <p>Development direction</p>
+              <h3>AIM Tower</h3>
+              <strong>Factory coordination</strong>
+              <p>
+                Coordinates work across stations and production workflows while
+                leaving execution decisions and task verification inside each
+                AIMEX.
+              </p>
+            </article>
           </div>
         </section>
 
-        <section className="home-section home-applications" id="applications">
+        <section className="home-section home-applications">
           <header className="section-heading section-heading-split">
             <div>
               <p className="eyebrow">Manufacturing applications</p>
-              <h2>Built around real work on the production floor</h2>
+              <h2>Start with work that can be demonstrated and verified</h2>
             </div>
             <p>
-              AIMRO is starting with assembly. As the platform develops, the
-              same learning and execution approach is intended to support
-              adjacent manufacturing work.
+              AIMRO begins with controlled assembly workcells. Additional
+              factory roles remain application directions until their hardware
+              integration, task skills, and operating performance are validated.
             </p>
           </header>
 
@@ -253,20 +268,15 @@ export default function Home() {
                   </div>
                 </li>
               ))}
-              <li className="application-list-link">
-                <Link className="text-link" href="/applications">
-                  Explore application areas <span aria-hidden="true">↗</span>
-                </Link>
-              </li>
             </ol>
           </div>
         </section>
 
-        <section className="home-section home-contact" id="contact">
+        <section className="home-section home-contact">
           <div className="contact-rail">
             <div>
               <p className="eyebrow">Contact AIMRO</p>
-              <h2>Start a conversation about adaptable robotics.</h2>
+              <h2>Tell us about the manufacturing work you want to understand</h2>
               <Link className="button button-primary" href="/contact">
                 Contact AIMRO <span aria-hidden="true">→</span>
               </Link>

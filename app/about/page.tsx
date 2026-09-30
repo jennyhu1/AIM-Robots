@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element -- Web-ready company images are served directly. */
 import type { Metadata } from "next";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
@@ -8,56 +7,47 @@ import { SITE } from "../site-data";
 export const metadata: Metadata = {
   title: "About AIMRO",
   description:
-    "Learn about AIMRO, its approach to adaptable manufacturing robotics, leadership team, and lab in Herndon, Virginia.",
+    "Learn about AIMRO's mission, manufacturing focus, research approach, and development path for reusable robotic work.",
 };
 
-const waysOfWorking = [
+const researchPrinciples = [
   {
+    number: "01",
     title: "Start with real manufacturing work",
-    body: "The product is shaped around tasks, equipment, and operating conditions found on the production floor.",
+    body: "Study the parts, process requirements, equipment, and completion criteria that define a useful task on the production floor.",
   },
   {
-    title: "Build software and hardware together",
-    body: "Perception, simulation, learning, and robot integration are developed as parts of one system.",
+    number: "02",
+    title: "Make task meaning explicit",
+    body: "Retain what the system observed, what the work requires, which conditions permit an action, and how completion should be checked.",
   },
   {
-    title: "Make task knowledge reusable",
-    body: "The long-term direction is to capture practical know-how in a form that can be checked, adapted, and applied again.",
+    number: "03",
+    title: "Develop software and hardware together",
+    body: "Connect perception, simulation, task intelligence, cameras, tooling, and robot integration as parts of one workcell system.",
+  },
+  {
+    number: "04",
+    title: "Validate before reuse",
+    body: "Carry qualified knowledge forward while configuring and testing each new station, rather than assuming one demonstration works everywhere.",
   },
 ];
 
-const leadershipTeam = [
+const developmentPath = [
   {
-    name: "William Noe",
-    role: "Interim CFO",
-    bio: "Finance executive with 50+ years of transaction and corporate leadership experience.",
-    image: "/images/william-noe.jpg",
-    width: 496,
-    height: 620,
+    label: "Demonstrated foundation",
+    title: "Live proof of concept",
+    body: "AIMRO has demonstrated the core bridge from human demonstration to explicit task understanding, guarded robot execution, result verification, and bounded recovery on real hardware.",
   },
   {
-    name: "Jake Cui",
-    role: "VP, Product Development",
-    bio: "Product leader specializing in AI, developer tools, and technology innovation.",
-    image: "/images/jake-cui.jpg",
-    width: 497,
-    height: 620,
+    label: "Current work",
+    title: "Factory-deployable AIMEX",
+    body: "The present focus is productizing and hardening the workcell system for controlled factory trials and repeatable deployment.",
   },
   {
-    name: "Dr. Li Zheng",
-    role: "Chief Scientist",
-    bio: "Industrial engineering expert specializing in manufacturing systems and operations.",
-    image: "/images/li-zheng.jpg",
-    width: 496,
-    height: 620,
-  },
-  {
-    name: "Dr. Yifan Li",
-    role: "Director, Industrial AI",
-    bio: "AI and computer vision specialist focused on industrial automation and manufacturing.",
-    image: "/images/yifan-li.jpg",
-    width: 504,
-    height: 620,
+    label: "Broader direction",
+    title: "Coordinated robotic factories",
+    body: "AIM Tower and additional AIMEX roles are intended to extend the architecture across factory workflows as their integrations and operating performance are validated.",
   },
 ];
 
@@ -67,43 +57,77 @@ export default function AboutPage() {
       <SiteHeader />
 
       <main className="content-page about-page">
-        <section className="page-hero about-page-hero" aria-labelledby="about-title">
+        <section className="page-hero about-page-hero about-mission-hero" aria-labelledby="about-title">
           <div className="page-hero-copy">
             <p className="eyebrow">About AIMRO</p>
-            <h1 id="about-title">Building a more adaptable way to automate manufacturing</h1>
+            <h1 id="about-title">Building reusable intelligence for manufacturing</h1>
           </div>
           <div className="about-page-intro">
             <p>
-              AIMRO develops AI-driven robot technology for manufacturers. Its
-              core product, AIMEX, is being built to teach industrial robots
-              assembly tasks from human demonstrations.
+              AIM Robots is a U.S.-based industrial AI and robotics company
+              developing an AI operating system for physical labor. The company
+              starts with trainable robotic workcells and the practical problem
+              of turning human manufacturing know-how into robot work.
             </p>
             <p>
-              The team brings together computer vision, simulation, task
-              intelligence, and robot integration to translate practical human
-              know-how into robot actions.
+              AIMRO&apos;s near-term product direction is AIMEX, a station-level
+              system that combines task intelligence, robot integration, and
+              physical workcell hardware. The broader AIOS architecture is
+              designed to support coordination and knowledge reuse across more
+              factory roles over time.
             </p>
           </div>
         </section>
 
-        <section className="about-manifesto" aria-label="AIMRO company direction">
+        <section className="about-manifesto about-mission" aria-label="AIMRO mission">
+          <p className="eyebrow">Our mission</p>
           <p>
-            Manufacturing does not only need more machines. It needs a better
-            way to capture what skilled people know and turn that knowledge
-            into robot work that can be reviewed, reused, and improved.
+            Make manufacturing expertise reusable by turning demonstrated work
+            and production evidence into robotic skills that can be inspected,
+            verified, and applied again.
           </p>
         </section>
 
+        <section className="story-section about-problem" aria-labelledby="about-problem-title">
+          <div className="about-problem-heading">
+            <p className="eyebrow">Why this work matters</p>
+            <h2 id="about-problem-title">Manufacturing knowledge does not scale easily</h2>
+          </div>
+          <div className="about-problem-copy">
+            <p>
+              Skilled production knowledge is often tacit. It lives with people,
+              in work instructions that do not capture every judgment, or inside
+              custom automation created for one line. When experienced workers
+              leave or a product changes, factories may need to train and
+              engineer the work again.
+            </p>
+            <p>
+              Traditional automation delivers repeatability for fixed processes,
+              but it can be difficult to reconfigure for the long tail of tasks
+              and variations. AIMRO is researching a more adaptable model in
+              which a system can learn the meaning of a task, connect it to
+              controlled execution, and retain the knowledge that future
+              workcells may reuse.
+            </p>
+          </div>
+        </section>
+
         <section className="story-section about-approach">
-          <div className="story-heading compact-story-heading">
-            <p className="eyebrow">How we work</p>
-            <h2>Practical systems, built around the task</h2>
+          <div className="story-heading story-heading-wide">
+            <p className="eyebrow">Research and development approach</p>
+            <h2>Build around the task and the evidence that proves it</h2>
+            <p>
+              Useful industrial AI must work with physical equipment and real
+              operating constraints. AIMRO brings software development into the
+              lab so task understanding and robot behavior can be evaluated
+              together.
+            </p>
           </div>
 
-          <div className="about-principles">
-            {waysOfWorking.map((item, index) => (
+          <div className="about-principles about-principles-four">
+            {researchPrinciples.map((item) => (
               <article key={item.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span>{item.number}</span>
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
               </article>
@@ -111,80 +135,42 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="story-section team-section" aria-labelledby="leadership-title">
-          <div className="team-section-header">
-            <div>
-              <p className="eyebrow">Leadership</p>
-              <h2 id="leadership-title">A team spanning robotics, manufacturing, product, and finance</h2>
-            </div>
+        <section className="story-section development-section" aria-labelledby="development-title">
+          <header className="development-heading">
+            <p className="eyebrow">Development path</p>
+            <h2 id="development-title">Prove the workcell before expanding the factory architecture</h2>
             <p>
-              AIMRO&apos;s leadership brings together the technical and operating
-              experience needed to develop industrial AI and connect it with
-              real manufacturing systems.
+              AIMRO separates what the current system demonstrates from what the
+              company is productizing now and what the broader architecture is
+              intended to support later.
             </p>
-          </div>
+          </header>
 
-          <div className="team-roster">
-            <article className="team-lead">
-              <figure>
-                <img
-                  src="/images/jeff-cui.jpg"
-                  alt="Jeff Cui, Founder and CEO of AIMRO"
-                  width="398"
-                  height="498"
-                />
-              </figure>
-              <div className="team-lead-copy">
-                <p className="team-member-label">Founder</p>
-                <h3>Jeff Cui</h3>
-                <p className="team-role">Founder &amp; CEO</p>
-                <p>
-                  Manufacturing and robotics entrepreneur focused on factory
-                  reshoring and industrial automation.
-                </p>
-                <a
-                  className="text-link"
-                  href={SITE.linkedIn}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  View LinkedIn <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </article>
-
-            <div className="team-members">
-              {leadershipTeam.map((member) => (
-                <article className="team-member" key={member.name}>
-                  <img
-                    src={member.image}
-                    alt={`${member.name}, ${member.role} at AIMRO`}
-                    width={member.width}
-                    height={member.height}
-                    loading="lazy"
-                  />
-                  <div>
-                    <h3>{member.name}</h3>
-                    <p className="team-role">{member.role}</p>
-                    <p>{member.bio}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
+          <ol className="development-path">
+            {developmentPath.map((stage, index) => (
+              <li key={stage.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <p>{stage.label}</p>
+                  <h3>{stage.title}</h3>
+                  <p>{stage.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </section>
 
-        <section className="story-section location-feature">
+        <section className="story-section location-feature about-location">
           <div>
             <p className="eyebrow">Herndon lab</p>
             <h2>Working where software meets the machine</h2>
             <p>
               AIMRO&apos;s lab in Herndon, Virginia brings model development,
-              simulation, cameras, robot hardware, and hands-on integration
-              into the same working environment.
+              simulation, cameras, robot hardware, and hands-on integration into
+              the same working environment.
             </p>
             <Link className="text-link" href="/contact">
-              Contact the team <span aria-hidden="true">↗</span>
+              Contact AIMRO <span aria-hidden="true">↗</span>
             </Link>
           </div>
           <address>
@@ -197,12 +183,12 @@ export default function AboutPage() {
 
         <section className="page-cta">
           <div>
-            <p className="eyebrow">Careers at AIMRO</p>
-            <h2>Join a small team working across robotics AI and real hardware.</h2>
+            <p className="eyebrow">Work with AIMRO</p>
+            <h2>Explore the current opening or discuss a manufacturing task</h2>
           </div>
           <div className="page-cta-actions">
             <Link className="button button-primary" href="/careers">
-              View Open Roles
+              View Careers
             </Link>
             <Link className="button button-secondary" href="/contact">
               Contact AIMRO
