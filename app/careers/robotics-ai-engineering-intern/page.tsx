@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { EmailActions } from "../../components/EmailActions";
 import { SiteFooter } from "../../components/SiteFooter";
 import { SiteHeader } from "../../components/SiteHeader";
+import { SiteLink as Link } from "../../components/SiteLink";
 import { OPEN_ROLE, SITE } from "../../site-data";
 
 export const metadata: Metadata = {

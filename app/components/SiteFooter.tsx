@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { NAV_ITEMS, SITE } from "../site-data";
+import { SiteLink as Link } from "./SiteLink";
 
 export function SiteFooter() {
   return (

@@ -190,3 +190,22 @@ test("keeps role status and maintenance settings centralized", async () => {
   assert.match(jobPage, /Position Closed/);
   assert.doesNotMatch(data + careersPage + jobPage, /Handshake/i);
 });
+
+test("uses full document navigation for deployed internal links", async () => {
+  const files = await Promise.all(
+    [
+      "../app/page.tsx",
+      "../app/aimex/page.tsx",
+      "../app/applications/page.tsx",
+      "../app/about/page.tsx",
+      "../app/careers/page.tsx",
+      "../app/contact/page.tsx",
+      "../app/careers/robotics-ai-engineering-intern/page.tsx",
+      "../app/components/SiteFooter.tsx",
+      "../app/components/SiteLink.tsx",
+    ].map((path) => readFile(new URL(path, import.meta.url), "utf8")),
+  );
+
+  assert.doesNotMatch(files.join("\n"), /from ["']next\/link["']/);
+  assert.match(files.at(-1) ?? "", /<a href=\{href\}/);
+});
