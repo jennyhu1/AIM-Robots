@@ -6,8 +6,8 @@ A concise, English-language company and recruiting site for AIMRO and its AIMEX 
 
 - `/` — company homepage with a concise company, technology, applications, and contact story
 - `/aimex` — AIMEX learning, execution, perception, and system-building blocks
-- `/applications` — assembly development focus and target directions in material handling and visual inspection
-- `/about` — company approach, founder, and Herndon lab
+- `/applications` — robotic-arm development focus and target directions for AGVs, AMRs, and inspection
+- `/about` — company mission, manufacturing problem, R&D approach, development path, and Herndon lab
 - `/careers` — careers overview and current open positions
 - `/contact` — standalone contact page with direct email and office address
 - `/careers/robotics-ai-engineering-intern` — complete internship description and email application instructions
@@ -160,17 +160,13 @@ confirmed before the final domain launch.
 
 - [ ] Confirm the public relationship between the display brand `AIMRO` and legal company name `AIM Robots, Inc.`.
 - [ ] Confirm the current product naming hierarchy. The current project presents `AIMEX` as the core platform; the legacy site describes `AIM AI Operating System (AIOS)` as the umbrella architecture and expands `AIMEX` as `AIM Executor`.
-- [ ] Confirm the public development-status wording for `AIMEX` and `AIM Tower`. The supplied cold-email deck slide 6 shows both operating tiers without `current`, `today`, `planned`, or `over time` labels, while the Master Story and earlier website copy described AIMEX as the current focus and AIM Tower as planned. The public relationship diagram is now status-neutral until this is reconciled.
-- [ ] Confirm that material handling and vision-based inspection should remain public target applications rather than current delivered capabilities.
+- [ ] Confirm the public development-status wording for `AIMEX` and `AIM Tower`. The site follows the Master Story by describing AIMEX as the current productization focus and AIM Tower as a factory-coordination development direction; the supplied relationship diagram itself remains status-neutral.
+- [ ] Confirm that AGV, AMR, and inspection applications should remain public target directions rather than current delivered capabilities.
 - [ ] Confirm that the public explanation of AIMEX may include explicit task knowledge, guarded execution, verification, recovery, and human escalation at the development-system level.
 - [ ] Confirm that the `aimex-demo-hardware.jpg` image extracted from the supplied presentation is cleared for public website use. It contains circuit boards and demonstration equipment; no visible faces were found.
 - [ ] Confirm that AIMRO has permission to publish the two images carried over from the legacy repository.
 - [ ] Confirm that the visible people in the background of the industrial workcell photograph are acceptable for public use.
 - [ ] Confirm that the embedded labels and temperature-style values in the machine-vision visualization are suitable for public display and do not imply validated AIMRO performance data.
-- [ ] Confirm the founder's full name is `Jeff Cui` and the public title should be `Founder & CEO`. The supplied deck also says `Founder, CEO & CPO`.
-- [ ] Confirm the current names, titles, and public biographies for William Noe, Jake Cui, Dr. Li Zheng, and Dr. Yifan Li. The About page follows the `OUR TEAM` slide in `AIM Robots V4-suggestions.pptx`.
-- [ ] Confirm the public wording of Jeff Cui's manufacturing, factory reshoring, and BS/MS background at Tsinghua University and the University of Maryland.
-- [ ] Confirm the supplied founder portrait is current and cleared for website use.
 - [ ] Confirm the PPT's AIMEX imagery represents the current robot system and is cleared for public use. The main source image has a digitally rendered/composited appearance and includes embedded interface-style text.
 - [ ] Confirm that the concept images from the project-level `Photos/` folder are cleared for public use as illustrative application contexts. They appear digitally generated and should not be presented as current shipped hardware.
 - [ ] Confirm that the operator-console concept image is suitable for public use. It includes a person shown from behind and visible interface-style screen content.

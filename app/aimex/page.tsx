@@ -83,14 +83,14 @@ export default function AimexPage() {
 
           <figure className="page-hero-media">
             <img
-              src="/images/aimex-demo-hardware.jpg"
-              alt="Close-up of circuit boards inside the AIMRO demonstration system"
-              width="852"
-              height="473"
+              src="/images/aimex-hero.jpg"
+              alt="AIMEX robotic arm and camera system on a mobile work platform"
+              width="1448"
+              height="1086"
             />
             <figcaption>
-              <span>Proof-of-concept system</span>
-              <strong>Real hardware from AIMRO&apos;s development setup</strong>
+              <span>AIMEX development system</span>
+              <strong>Workcell intelligence connected to physical execution</strong>
             </figcaption>
           </figure>
         </section>
@@ -121,16 +121,16 @@ export default function AimexPage() {
         <section className="story-section concept-section" aria-labelledby="concept-title">
           <div className="concept-intro">
             <p className="eyebrow">Explicit task intelligence</p>
-            <h2 id="concept-title">Keep interpretation and execution knowledge understandable</h2>
+            <h2 id="concept-title">Turn several sources into qualified task knowledge</h2>
             <p>
-              AIMRO is developing a broader architecture that can combine
-              manufacturing information from several sources while keeping the
-              task requirements visible and reviewable. Two terms describe the
-              high-level roles in that design.
+              A demonstration rarely contains every fact required for safe,
+              repeatable work. AIMRO is developing an interpretation layer that
+              combines manufacturing information while preserving its source,
+              uncertainty, and gaps for review.
             </p>
           </div>
 
-          <div className="concept-pair">
+          <div className="concept-pair concept-pair-single">
             <article>
               <p>Interpretation layer / under development</p>
               <h3>Multimodal Understanding and Abstraction (MUA)</h3>
@@ -140,18 +140,6 @@ export default function AimexPage() {
                 explanations. Its role is to preserve where information came
                 from and surface missing or conflicting information before that
                 material becomes task knowledge.
-              </p>
-            </article>
-            <article>
-              <p>Knowledge layer / core approach demonstrated</p>
-              <h3>Universal Explicit Representation (UER)</h3>
-              <p>
-                UER is the broader structured knowledge direction for recording
-                what is known, what the task requires, which conditions allow an
-                action, and what would count as success. The proof of concept
-                implements the core explicit-representation approach; the full
-                UER architecture and production-scale benefits remain under
-                development.
               </p>
             </article>
           </div>

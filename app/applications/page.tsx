@@ -7,46 +7,61 @@ import { SiteLink as Link } from "../components/SiteLink";
 export const metadata: Metadata = {
   title: "Manufacturing Applications",
   description:
-    "Explore AIMRO's development focus in robotic assembly and target applications in material handling and visual inspection.",
+    "Explore how AIMRO's AIOS architecture applies to robotic arms, AGVs, AMRs, and industrial inspection.",
 };
 
 const applicationAreas = [
   {
     number: "01",
-    status: "Development focus",
-    title: "Assembly",
-    image: "/images/manufacturing-workcell.jpg",
-    alt: "Industrial robot arm operating in a manufacturing workcell",
+    status: "Current development focus",
+    title: "Robotic arms",
+    image: "/images/application-robotic-arm-concept.jpg",
+    alt: "Concept rendering of an AIMRO robotic arm and camera system on a mobile work platform",
     body: [
-      "Assembly is AIMRO's current starting point: controlled tasks in which a person can demonstrate the work and explain the intended result.",
-      "A useful evaluation must define the parts, sequence, tooling, variation, and evidence that confirms completion. AIMEX connects that task knowledge with vision, simulation, and physical workcell integration.",
-      "The proof-of-concept system demonstrates the core learning and execution path. Factory deployment, repeatability across representative tasks, and production reliability remain productization work.",
+      "Robotic arms are AIMRO's starting point for assembly and production work. In a controlled workcell, an experienced person can demonstrate the task and explain the intended physical result.",
+      "AIMEX is being developed to retain the parts, operating conditions, action sequence, and evidence that confirms completion, then connect that task knowledge to station-specific cameras, tooling, fixtures, and robot motion.",
+      "The proof-of-concept system demonstrates the core path from demonstration to guarded execution, verification, and recovery. Factory deployment and repeatable performance across representative tasks remain productization work.",
     ],
-    caption: "Industrial robot workcell context",
+    caption: "AIMRO robotic-arm concept",
   },
   {
     number: "02",
     status: "Target application",
-    title: "Material handling",
-    image: "/images/application-material-handling.jpg",
-    alt: "Concept illustration of a mobile robot for moving material in a factory",
+    title: "AGVs",
+    image: "/images/application-agv-concept.jpg",
+    alt: "Concept rendering of an AIMRO automated guided forklift carrying a palletized container",
     body: [
-      "Material movement could use the same explicit description of the item, pickup condition, destination, and delivery result. The intended architecture gives each mobile AIMEX its own execution capability while exchanging assignments and status with factory-level coordination.",
-      "This remains a planned application direction. Hardware integration, operating constraints, and task performance require separate validation before it can be presented as a deployed offering.",
+      "Automated guided vehicles can move material between defined pickup points, stations, queues, and destinations. The task description must preserve which item is being moved, its required condition, the authorized route or operating zone, and the evidence that delivery is complete.",
+      "In the intended AIOS architecture, an AGV-based AIMEX would retain local navigation and execution capability while exchanging assignments, status, and results with AIM Tower at the factory level.",
+      "AGV integration remains a target application direction. Its hardware, site constraints, traffic behavior, and production performance require application-specific validation.",
     ],
-    caption: "Illustrative material-handling context",
+    caption: "AIMRO AGV concept",
   },
   {
     number: "03",
     status: "Target application",
-    title: "Visual inspection",
-    image: "/images/application-operator-console.jpg",
-    alt: "Concept illustration of an operator monitoring manufacturing vision systems",
+    title: "AMRs",
+    image: "/images/application-amr-concept.jpg",
+    alt: "Concept rendering of an AIMRO autonomous mobile robot with a robotic arm",
     body: [
-      "Visual or equipment evidence could confirm a defined result before the next production step. The task must specify what is being checked, which evidence is authoritative, and what happens when the result remains uncertain.",
-      "AIMRO's current demonstration includes result checks within its task flow. A broader production inspection product remains a planned direction and requires application-specific proof.",
+      "Autonomous mobile robots can support material movement, mobile service, and tasks that need to reach more than one station. A useful skill must describe both the production objective and the conditions that allow the mobile platform to act at each location.",
+      "The architecture is intended to give each AMR-based AIMEX its own embodied execution role. Factory coordination can assign work and monitor progress without replacing the robot's local task execution and verification.",
+      "AMR applications are a development direction, not a mature deployed offering. Mobility, manipulation, sensing, safety integration, and each workflow still require separate validation.",
     ],
-    caption: "Illustrative monitoring and inspection context",
+    caption: "AIMRO AMR concept",
+  },
+  {
+    number: "04",
+    status: "Target application",
+    title: "Inspection",
+    image: "/images/application-inspection-concept.jpg",
+    alt: "Concept rendering of an AIMRO industrial vision and lighting system",
+    body: [
+      "Inspection systems provide evidence about parts, process states, and completed work. For that evidence to guide production, the task must define what is being checked, which condition counts as pass or fail, and what should happen when the result is uncertain.",
+      "AIMRO's proof of concept already includes result verification within a robotic task flow. The broader direction is to connect cameras, vision stations, and inspection devices to explicit quality evidence and corrective actions.",
+      "A production inspection product remains a target application. It requires task-specific data, calibrated sensing, acceptance criteria, and validation in the intended operating environment.",
+    ],
+    caption: "AIMRO inspection-system concept",
   },
 ];
 
@@ -76,9 +91,10 @@ export default function ApplicationsPage() {
             <p className="eyebrow">Manufacturing applications</p>
             <h1 id="applications-title">Learning practical manufacturing work</h1>
             <p>
-              AIMRO is starting with controlled assembly and part-placement
-              work. Additional applications describe where the architecture
-              could extend after their hardware, task skills, and operating
+              AIMRO is starting with controlled robotic-arm assembly and
+              part-placement work. The same locally capable AIMEX architecture
+              is designed to extend to mobile material handling and inspection
+              after each application&apos;s hardware, skills, and operating
               performance are validated.
             </p>
           </div>

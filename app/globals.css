@@ -4420,10 +4420,6 @@ h3 {
   height: clamp(380px, 38vw, 520px);
   display: block;
   background: var(--surface);
-  object-fit: cover;
-}
-
-.application-story:not(:first-child) img {
   object-fit: contain;
 }
 
@@ -5158,6 +5154,14 @@ h3 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(30px, 5vw, 62px);
+}
+
+.concept-pair-single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.concept-pair-single article {
+  max-width: 760px;
 }
 
 .concept-pair article {

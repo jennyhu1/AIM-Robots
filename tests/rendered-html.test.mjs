@@ -73,14 +73,14 @@ test("server-renders the AIMEX technology story", async () => {
   assert.match(html, /From observed work to a result the system can check/);
   assert.match(html, /Explicit task intelligence/);
   assert.match(html, /Multimodal Understanding and Abstraction/);
-  assert.match(html, /Universal Explicit Representation/);
+  assert.doesNotMatch(html, /Universal Explicit Representation/);
   assert.match(html, /Learning from demonstrations/);
   assert.match(html, /AIM Tower/);
   assert.match(html, /aim-aios-architecture\.png/);
   assert.match(html, /current productization focus/i);
   assert.match(html, /broader development direction/i);
   assert.match(html, /Reuse does not mean zero commissioning/);
-  assert.match(html, /aimex-demo-hardware\.jpg/);
+  assert.match(html, /aimex-hero\.jpg/);
   assert.match(html, /perception-visualization\.jpg/);
   assert.doesNotMatch(html, /\$1\.2M|80%|RaaS|patent|purchase agreement/i);
 });
@@ -91,13 +91,17 @@ test("server-renders development and target application states", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Manufacturing Applications \| AIMRO<\/title>/i);
-  assert.match(html, /Development focus/);
-  assert.match(html, /Assembly/);
+  assert.match(html, /Current development focus/);
   assert.match(html, /Target application/);
-  assert.match(html, /Material handling/);
-  assert.match(html, /Visual inspection/);
-  assert.match(html, /manufacturing-workcell\.jpg/);
-  assert.match(html, /Factory deployment, repeatability across representative tasks/);
+  assert.match(html, /Robotic arms/);
+  assert.match(html, />AGVs</);
+  assert.match(html, />AMRs</);
+  assert.match(html, />Inspection</);
+  assert.match(html, /application-robotic-arm-concept\.jpg/);
+  assert.match(html, /application-agv-concept\.jpg/);
+  assert.match(html, /application-amr-concept\.jpg/);
+  assert.match(html, /application-inspection-concept\.jpg/);
+  assert.match(html, /Factory deployment and repeatable performance/);
 });
 
 test("server-renders the company mission without personal profiles", async () => {
