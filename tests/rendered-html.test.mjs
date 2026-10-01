@@ -81,6 +81,15 @@ test("server-renders the AIMEX technology story", async () => {
   assert.match(html, /broader development direction/i);
   assert.match(html, /Reuse does not mean zero commissioning/);
   assert.match(html, /aimex-hero\.jpg/);
+  assert.match(html, /AIMEX across robotic bodies/);
+  assert.match(html, /Robotic arms/);
+  assert.match(html, />AGVs</);
+  assert.match(html, />AMRs</);
+  assert.match(html, />Inspection</);
+  assert.match(html, /application-robotic-arm-concept\.jpg/);
+  assert.match(html, /application-agv-concept\.jpg/);
+  assert.match(html, /application-amr-concept\.jpg/);
+  assert.match(html, /application-inspection-concept\.jpg/);
   assert.match(html, /perception-visualization\.jpg/);
   assert.doesNotMatch(html, /\$1\.2M|80%|RaaS|patent|purchase agreement/i);
 });
@@ -91,17 +100,13 @@ test("server-renders development and target application states", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Manufacturing Applications \| AIMRO<\/title>/i);
-  assert.match(html, /Current development focus/);
+  assert.match(html, /Development focus/);
+  assert.match(html, /Assembly/);
   assert.match(html, /Target application/);
-  assert.match(html, /Robotic arms/);
-  assert.match(html, />AGVs</);
-  assert.match(html, />AMRs</);
-  assert.match(html, />Inspection</);
-  assert.match(html, /application-robotic-arm-concept\.jpg/);
-  assert.match(html, /application-agv-concept\.jpg/);
-  assert.match(html, /application-amr-concept\.jpg/);
-  assert.match(html, /application-inspection-concept\.jpg/);
-  assert.match(html, /Factory deployment and repeatable performance/);
+  assert.match(html, /Material handling/);
+  assert.match(html, /Visual inspection/);
+  assert.match(html, /manufacturing-workcell\.jpg/);
+  assert.match(html, /Factory deployment, repeatability across representative tasks/);
 });
 
 test("server-renders the company mission without personal profiles", async () => {

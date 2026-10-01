@@ -5,8 +5,8 @@ A concise, English-language company and recruiting site for AIMRO and its AIMEX 
 ## Pages
 
 - `/` — company homepage with a concise company, technology, applications, and contact story
-- `/aimex` — AIMEX learning, execution, perception, and system-building blocks
-- `/applications` — robotic-arm development focus and target directions for AGVs, AMRs, and inspection
+- `/aimex` — AIMEX learning, execution, perception, system-building blocks, and intended robotic body categories
+- `/applications` — assembly development focus and target directions in material handling and visual inspection
 - `/about` — company mission, manufacturing problem, R&D approach, development path, and Herndon lab
 - `/careers` — careers overview and current open positions
 - `/contact` — standalone contact page with direct email and office address

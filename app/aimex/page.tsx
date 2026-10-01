@@ -57,6 +57,57 @@ const buildingBlocks = [
   },
 ];
 
+const roboticBodies = [
+  {
+    number: "01",
+    status: "Current development focus",
+    title: "Robotic arms",
+    image: "/images/application-robotic-arm-concept.jpg",
+    alt: "Concept rendering of an AIMRO robotic arm and camera system on a mobile work platform",
+    body: [
+      "Robotic arms are AIMRO's starting point for assembly and production work. In a controlled workcell, a person can demonstrate the task and explain the intended physical result.",
+      "AIMEX is being developed to connect that task knowledge to station-specific cameras, tooling, fixtures, and robot motion while preserving the conditions and evidence needed to verify completion.",
+      "The proof-of-concept system demonstrates this core learning and execution path. Factory deployment and repeatable performance across representative tasks remain productization work.",
+    ],
+  },
+  {
+    number: "02",
+    status: "Target application direction",
+    title: "AGVs",
+    image: "/images/application-agv-concept.jpg",
+    alt: "Concept rendering of an AIMRO automated guided forklift carrying a palletized container",
+    body: [
+      "Automated guided vehicles can move material between defined pickup points, stations, queues, and destinations. A useful task description must retain the item, required condition, destination, and evidence that delivery is complete.",
+      "In the intended architecture, an AGV-based AIMEX would keep its own navigation and execution capability while exchanging assignments, status, and results with AIM Tower.",
+      "AGV integration remains a target direction. Hardware, site constraints, traffic behavior, and production performance require application-specific validation.",
+    ],
+  },
+  {
+    number: "03",
+    status: "Target application direction",
+    title: "AMRs",
+    image: "/images/application-amr-concept.jpg",
+    alt: "Concept rendering of an AIMRO autonomous mobile robot with a robotic arm",
+    body: [
+      "Autonomous mobile robots can support material movement, mobile service, and work that reaches more than one station. The skill must describe both the production objective and the conditions that allow the mobile platform to act at each location.",
+      "An AMR-based AIMEX is intended to remain a locally capable execution system. AIM Tower can coordinate assignments and production flow without turning the robot into a passive device.",
+      "AMR applications remain a development direction. Mobility, manipulation, sensing, safety integration, and each workflow still require separate validation.",
+    ],
+  },
+  {
+    number: "04",
+    status: "Target application direction",
+    title: "Inspection",
+    image: "/images/application-inspection-concept.jpg",
+    alt: "Concept rendering of an AIMRO industrial vision and lighting system",
+    body: [
+      "Inspection systems provide evidence about parts, process states, and completed work. The task must define what is being checked, which condition counts as pass or fail, and what happens when the result remains uncertain.",
+      "AIMRO's proof of concept includes result verification inside a robotic task flow. The broader direction is to connect cameras, vision stations, and inspection devices to explicit quality evidence and corrective action.",
+      "A production inspection product remains a target application and requires task-specific data, calibrated sensing, acceptance criteria, and validation in its intended operating environment.",
+    ],
+  },
+];
+
 export default function AimexPage() {
   return (
     <>
@@ -181,6 +232,45 @@ export default function AimexPage() {
               not a catalog of products already deployed.
             </figcaption>
           </figure>
+        </section>
+
+        <section className="story-section aimex-bodies-section" aria-labelledby="robotic-bodies-title">
+          <header className="aimex-bodies-heading">
+            <p className="eyebrow">AIMEX across robotic bodies</p>
+            <h2 id="robotic-bodies-title">Local execution for different kinds of factory work</h2>
+            <p>
+              The same AIOS architecture is designed to support several types
+              of robotic execution system. Each AIMEX keeps the intelligence
+              and integration required for its own role; the categories below
+              do not represent a catalog of products already deployed.
+            </p>
+          </header>
+
+          <div className="aimex-body-list">
+            {roboticBodies.map((body) => (
+              <article className="aimex-body" key={body.title}>
+                <figure>
+                  <img
+                    src={body.image}
+                    alt={body.alt}
+                    width="1254"
+                    height="1254"
+                    loading="lazy"
+                  />
+                </figure>
+                <div className="aimex-body-copy">
+                  <div className="aimex-body-status">
+                    <span>{body.number}</span>
+                    <p>{body.status}</p>
+                  </div>
+                  <h3>{body.title}</h3>
+                  {body.body.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className="story-section reuse-section" aria-labelledby="reuse-title">
